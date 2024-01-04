@@ -82,7 +82,6 @@ export default async function (hre: HardhatRuntimeEnvironment): Promise<OracleCo
         },
       },
     },
-
     arbitrum: {
       realtimeFeedVerifier: "0xDBaeB34DF0AcfA564a49e13840C5CE2894C4b886",
       signers: ["0x0F711379095f2F0a6fdD1e8Fccd6eBA0833c1F1f"],

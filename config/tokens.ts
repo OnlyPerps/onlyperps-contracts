@@ -39,6 +39,7 @@ export type TestTokenConfig = {
   wrappedNative?: boolean;
   synthetic?: never;
   realtimeFeedId?: string;
+  realtimeFeedDecimals?: number;
 };
 
 export type TokenConfig = SyntheticTokenConfig | RealTokenConfig | TestTokenConfig;

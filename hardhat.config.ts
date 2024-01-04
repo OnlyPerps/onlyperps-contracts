@@ -6,7 +6,7 @@ import fs from "fs";
 import { ethers } from "ethers";
 
 import { HardhatUserConfig } from "hardhat/config";
-import "@nomicfoundation/hardhat-toolbox";
+import "@nomicfoundation/hardhat-verify";
 import "hardhat-contract-sizer";
 import "solidity-coverage";
 import "hardhat-gas-reporter";
@@ -181,6 +181,9 @@ const config: HardhatUserConfig = {
   },
   mocha: {
     timeout: 100000000,
+  },
+  sourcify: {
+    enabled: false,
   },
 };
 

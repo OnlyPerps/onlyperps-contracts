@@ -2,7 +2,7 @@ import hre from "hardhat";
 
 import { FLOAT_PRECISION, expandDecimals, decimalToFloat, formatAmount } from "../utils/math";
 import { OrderType, DecreasePositionSwapType } from "../utils/order";
-import { fetchRealtimeFeedReport } from "../utils/realtimeFeed";
+import { fetchRealtimeFeedReportV2 } from "../utils/realtimeFeed";
 import { contractAt } from "../utils/deploy";
 
 // INSTRUCTIONS TO RUN
@@ -51,10 +51,10 @@ async function createOrder({
     await collateralToken.approve(router.address, initialCollateralDeltaAmount);
   }
 
-  const estimatedGasLimit = 5_000_000;
+  const estimatedGasLimit = 8_000_000;
   const gasPrice = await signer.getGasPrice();
   const executionFee = gasPrice.mul(estimatedGasLimit);
-
+  console.log("estimated execution fee", executionFee.toString());
   const orderParams = {
     addresses: {
       receiver,
@@ -76,24 +76,25 @@ async function createOrder({
     orderType,
     decreasePositionSwapType,
     isLong,
-    shouldUnwrapNativeToken: true,
+    shouldUnwrapNativeToken: false,
     referralCode,
   };
-
-  const tx = await exchangeRouter.multicall(
-    [
-      // send WETH to the orderVault pay for the execution fee
-      exchangeRouter.interface.encodeFunctionData("sendWnt", [orderVault.address, executionFee]),
-      // send the collateral to the orderVault
-      exchangeRouter.interface.encodeFunctionData("sendTokens", [
-        initialCollateralToken,
-        orderVault.address,
-        initialCollateralDeltaAmount,
-      ]),
-      exchangeRouter.interface.encodeFunctionData("createOrder", [orderParams]),
-    ],
-    { value: executionFee }
-  );
+  // callstatic
+  const multicallArgs = [
+    // send WETH to the orderVault pay for the execution fee
+    exchangeRouter.interface.encodeFunctionData("sendWnt", [orderVault.address, executionFee]),
+    // send the collateral to the orderVault
+    exchangeRouter.interface.encodeFunctionData("sendTokens", [
+      initialCollateralToken,
+      orderVault.address,
+      initialCollateralDeltaAmount,
+    ]),
+    exchangeRouter.interface.encodeFunctionData("createOrder", [orderParams]),
+  ];
+  const txArgs = { value: executionFee };
+  const returnValues = await exchangeRouter.callStatic.multicall(multicallArgs, txArgs);
+  console.log("returnValues", returnValues);
+  const tx = await exchangeRouter.multicall(multicallArgs, txArgs);
 
   return tx;
 }
@@ -109,33 +110,34 @@ async function main() {
   const referralCode = ethers.constants.HashZero;
 
   // a list of markets can be printed using scripts/printMarkets.ts
-  const ETH_USD_MARKET = "0x1529876A9348D61C6c4a3EEe1fe6CbF1117Ca315";
+  const ETH_USD_MARKET = "0x586900162331108356eFF601C011858E2A5a57a1";
 
   // list of feed IDs can be found in config/tokens.ts
-  const ETH_FEED_ID = "0x4554482d5553442d415242495452554d2d544553544e45540000000000000000";
+  const ETH_FEED_ID = "0x000359843a543ee2fe414dc14c7e7920ef10f4372990b79d6361cdc0dd1ba782";
 
   // list of tokens can be found in config/tokens.ts
-  const USDC = "0x04FC936a15352a1b15b3B9c56EA002051e3DB3e5";
+  const USDC = "0x37cce10bc138e364249f3441936b8c6038a3cdf6";
 
   const feedId = ETH_FEED_ID;
   // reduce the latest block by 10 to allow for some buffer since it may take some time for reports to be produced
-  const blockNumber = (await hre.ethers.provider.getBlockNumber()) - 10;
+  const timestamp = Math.floor(Date.now() / 1000) - 10;
 
   const clientId = process.env.REALTIME_FEED_CLIENT_ID;
   const clientSecret = process.env.REALTIME_FEED_CLIENT_SECRET;
-  const report = await fetchRealtimeFeedReport({ feedId, blockNumber, clientId, clientSecret });
+  const report = await fetchRealtimeFeedReportV2({ feedId, timestamp, clientId, clientSecret });
 
-  const chainlinkFeedPrecision = expandDecimals(1, 8);
-
+  const chainlinkFeedPrecision = expandDecimals(1, 18);
+  const isLong = false;
+  const acceptableSlippage = isLong ? 30 : -30;
   const market = ETH_USD_MARKET;
 
-  const currentPrice = report.minPrice.mul(FLOAT_PRECISION).div(chainlinkFeedPrecision);
+  const currentPrice = report.report.report.price.mul(FLOAT_PRECISION).div(chainlinkFeedPrecision);
   console.log(`currentPrice: ${formatAmount(currentPrice, 30, 2, true)}`);
 
   // allow 30bps (0.3%) slippage
   // divide by 10^18 to get the price per unit of token
   const acceptablePrice = currentPrice
-    .mul(10_000 + 30)
+    .mul(10_000 + acceptableSlippage)
     .div(10_000)
     .div(expandDecimals(1, 18));
 
@@ -150,7 +152,7 @@ async function main() {
     sizeDeltaUsd: decimalToFloat(100), // 100 USD
     triggerPrice: 0, // not needed for market order
     acceptablePrice,
-    isLong: false,
+    isLong: isLong,
     orderType: OrderType.MarketIncrease,
     decreasePositionSwapType: DecreasePositionSwapType.NoSwap,
   });

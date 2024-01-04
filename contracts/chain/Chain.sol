@@ -42,7 +42,7 @@ library Chain {
     }
 
     function shouldUseArbSysValues() internal view returns (bool) {
-        return block.chainid == ARBITRUM_CHAIN_ID || block.chainid == ARBITRUM_GOERLI_CHAIN_ID;
+        return block.chainid == ARBITRUM_CHAIN_ID || block.chainid == ARBITRUM_GOERLI_CHAIN_IDn;
 
     }
 }

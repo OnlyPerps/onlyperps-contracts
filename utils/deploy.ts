@@ -38,7 +38,7 @@ export function createDeployFunction({
   }) => Promise<void>;
   id?: string;
 }): DeployFunction {
-  const func = async ({ getNamedAccounts, deployments, gmx, network }: HardhatRuntimeEnvironment) => {
+  const func = async ({ getNamedAccounts, deployments, gmx, network, run }: HardhatRuntimeEnvironment) => {
     const { deploy, get } = deployments;
     const { deployer } = await getNamedAccounts();
 
@@ -90,6 +90,19 @@ export function createDeployFunction({
       // because the actual deploy did not succeed
       throw new Error(`Deploy failed with error ${e}`);
     }
+    console.log("deployArgs", deployArgs);
+    console.log("deployedContract.address", deployedContract.address);
+    console.log("libraries", libraries);
+    // try {
+    //   console.log("verifying...");
+    //   await run("verify:verify", {
+    //     address: deployedContract.address,
+    //     constructorArguments: deployArgs,
+    //     noCompile: true,
+    //   });
+    // } catch (e) {
+    //   console.log("verification failed, passs", e);
+    // }
 
     if (afterDeploy) {
       await afterDeploy({ deployedContract, deployer, getNamedAccounts, deployments, gmx, network });

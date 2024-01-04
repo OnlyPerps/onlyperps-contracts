@@ -29,7 +29,7 @@ async function getValues(): Promise<{
 }
 
 async function main() {
-  console.log("run createDepositWethUsdc");
+  console.log("run createDepositWbtcUsdc");
   const marketFactory = await ethers.getContract("MarketFactory");
   const roleStore = await ethers.getContract("RoleStore");
   const dataStore = await ethers.getContract("DataStore");
@@ -56,24 +56,24 @@ async function main() {
   }
   console.log("WNT balance %s", await wnt.balanceOf(wallet.address));
 
-  const weth: MintableToken = await ethers.getContract("WETH");
-  const longTokenAmount = expandDecimals(1, 17); // 0.1 weth
-  const wethAllowance = await weth.allowance(wallet.address, router.address);
-  console.log("weth address %s", weth.address);
-  console.log("weth allowance %s", wethAllowance.toString());
-  if (wethAllowance.lt(longTokenAmount)) {
-    console.log("approving weth");
-    await weth.approve(router.address, bigNumberify(2).pow(256).sub(1));
+  const wbtc: MintableToken = await ethers.getContract("WBTC");
+  const longTokenAmount = expandDecimals(1, 19); // 10 wbtc
+  const wbtcAllowance = await wbtc.allowance(wallet.address, router.address);
+  console.log("wbtc address %s", wbtc.address);
+  console.log("wbtc allowance %s", wbtcAllowance.toString());
+  if (wbtcAllowance.lt(longTokenAmount)) {
+    console.log("approving wbtc");
+    await wbtc.approve(router.address, bigNumberify(2).pow(256).sub(1));
   }
-  const wethBalance = await weth.balanceOf(wallet.address);
-  console.log("weth balance %s", wethBalance);
-  if (wethBalance.lt(longTokenAmount)) {
-    console.log("minting %s weth", longTokenAmount);
-    await weth.mint(wallet.address, longTokenAmount);
+  const wbtcBalance = await wbtc.balanceOf(wallet.address);
+  console.log("wbtc balance %s", wbtcBalance);
+  if (wbtcBalance.lt(longTokenAmount)) {
+    console.log("minting %s wbtc", longTokenAmount);
+    await wbtc.mint(wallet.address, longTokenAmount);
   }
 
   const usdc: MintableToken = await ethers.getContract("USDC");
-  const shortTokenAmount = expandDecimals(100, 6); // 100 USDC
+  const shortTokenAmount = expandDecimals(460000, 6); // 460000 USDC
   const usdcAllowance = await usdc.allowance(wallet.address, router.address);
   console.log("USDC address %s", usdc.address);
   console.log("USDC allowance %s", usdcAllowance.toString());
@@ -88,26 +88,26 @@ async function main() {
     await usdc.mint(wallet.address, shortTokenAmount);
   }
 
-  const wethUsdMarketAddress = await getMarketTokenAddress(
-    weth.address,
-    weth.address,
+  const wbtcUsdMarketAddress = await getMarketTokenAddress(
+    wbtc.address,
+    wbtc.address,
     usdc.address,
     DEFAULT_MARKET_TYPE,
     marketFactory.address,
     roleStore.address,
     dataStore.address
   );
-  console.log("market %s", wethUsdMarketAddress);
+  console.log("market %s", wbtcUsdMarketAddress);
 
   const params: DepositUtils.CreateDepositParamsStruct = {
     receiver: wallet.address,
     callbackContract: ethers.constants.AddressZero,
-    market: wethUsdMarketAddress,
+    market: wbtcUsdMarketAddress,
     minMarketTokens: 0,
     shouldUnwrapNativeToken: false,
     executionFee: executionFee,
     callbackGasLimit: 0,
-    initialLongToken: weth.address,
+    initialLongToken: wbtc.address,
     longTokenSwapPath: [],
     initialShortToken: usdc.address,
     shortTokenSwapPath: [],
@@ -119,16 +119,12 @@ async function main() {
 
   const multicallArgs = [
     exchangeRouter.interface.encodeFunctionData("sendWnt", [depositVault.address, executionFee]),
-    exchangeRouter.interface.encodeFunctionData("sendTokens", [weth.address, depositVault.address, longTokenAmount]),
+    exchangeRouter.interface.encodeFunctionData("sendTokens", [wbtc.address, depositVault.address, longTokenAmount]),
     exchangeRouter.interface.encodeFunctionData("sendTokens", [usdc.address, depositVault.address, shortTokenAmount]),
     exchangeRouter.interface.encodeFunctionData("createDeposit", [params]),
   ];
   console.log("multicall args", multicallArgs);
-  const returnValues = await exchangeRouter.callStatic.multicall(multicallArgs, {
-    value: executionFee,
-    gasLimit: 2500000,
-  });
-  console.log("returnValues", returnValues);
+
   const tx = await exchangeRouter.multicall(multicallArgs, {
     value: executionFee,
     gasLimit: 2500000,
