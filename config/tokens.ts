@@ -35,7 +35,7 @@ export type TestTokenConfig = {
   address?: never;
   decimals: number;
   transferGasLimit: number;
-  deploy: true;
+  deploy: boolean;
   wrappedNative?: boolean;
   synthetic?: never;
   realtimeFeedId?: string;
@@ -48,6 +48,39 @@ export type TokensConfig = { [tokenSymbol: string]: TokenConfig };
 const config: {
   [network: string]: TokensConfig;
 } = {
+  seiTestnet: {
+    WBTC: {
+      transferGasLimit: 200 * 1000,
+      deploy: false,
+      address: "0x7b22007AAC2c9cb931CC33A446A0e17AFd51A051",
+      decimals: 8,
+    },
+    WETH: {
+      transferGasLimit: 200 * 1000,
+      deploy: false,
+      address: "0x12B6a79224405A2E4a5aEfEfc865707f5dAB0808",
+      decimals: 18,
+    },
+    WSEI: {
+      transferGasLimit: 200 * 1000,
+      deploy: false,
+      address: "0x452586E9Fab675Ad5c9c34ea4Fe66Dd33cB5ba73",
+      decimals: 18,
+      wrappedNative: true,
+    },
+    USDT: {
+      transferGasLimit: 200 * 1000,
+      deploy: false,
+      address: "0x2426453b0A69b137dcf9569238fF915cF93854B7",
+      decimals: 6,
+    },
+    USDC: {
+      transferGasLimit: 200 * 1000,
+      deploy: false,
+      address: "0x6997844c11Fd4E18dB408eAD6CEE641Fe8F52E3B",
+      decimals: 6,
+    },
+  },
   arbitrum: {
     BTC: {
       synthetic: true,

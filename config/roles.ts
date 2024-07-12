@@ -32,10 +32,11 @@ export default async function (hre: HardhatRuntimeEnvironment): Promise<RolesCon
   };
 
   const testnetAdmins = {
-    "0x9ECC803FF4e65C37f8b2Fe75095032DCd5bC6a5c": true,
-    "0xFa5D0E7e62E5ED9E8b726200FF5516AaC3e23a38": true,
-    "0x591Fe06C50073cdB2B28B69904dA89E5979f207F": true,
-    "0xEe4477439cF6710Cd47F952137e7dF172977E182": true,
+    "0x56F848016d241739954118b0f816A5CF08eD735e": true,
+    "0x985285CB412699f886312c7AadFF3fF5D4f43901": true,
+    "0x9e690768461ac62e4047c8a2922286495bf3D098": true,
+    "0xCf02f3df1D1a60789e6D1bd7f71e0D0BA65e0C4f": true,
+    "0xA4443291dc98f0483B67629a3fBa22681eb59a03": true,
   };
 
   const testnetConfig = {
@@ -159,6 +160,7 @@ export default async function (hre: HardhatRuntimeEnvironment): Promise<RolesCon
     },
     arbitrumGoerli: testnetConfig,
     avalancheFuji: testnetConfig,
+    seiTestnet: testnetConfig,
   };
   return config[hre.network.name];
 }

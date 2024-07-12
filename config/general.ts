@@ -46,8 +46,8 @@ export default async function ({ network }: HardhatRuntimeEnvironment) {
   }
 
   const generalConfig = {
-    feeReceiver: "0x43ce1d475e06c65dd879f4ec644b8e0e10ff2b6d",
-    holdingAddress: "0x3f59203ea1c66527422998b54287e1efcacbe2c5",
+    feeReceiver: "0x751713BA6c3Fddb5A14AE63fD68413c17d31927D",
+    holdingAddress: "0x99d124c98f5792da3A89Be5A4050d3a3A000D457",
     maxUiFeeFactor: decimalToFloat(2, 4), // 0.0002, 0.02%
     minHandleExecutionErrorGas: 1_200_000,
     minHandleExecutionErrorGasToForward: 1_000_000, // measured gas required for an order cancellation: ~600,000
@@ -101,6 +101,16 @@ export default async function ({ network }: HardhatRuntimeEnvironment) {
       requestExpirationBlockAge: 150, // about 5 minutes assuming 1 block per 2 seconds
       estimatedGasFeeBaseAmount: 1_000_000,
       executionGasFeeBaseAmount: 1_000_000,
+    },
+    seiTestnet: {
+      requestExpirationBlockAge: 1200, // about 5 minutes assuming 4 blocks per second
+      estimatedGasFeeBaseAmount: 8_000_000,
+      executionGasFeeBaseAmount: 8_000_000,
+    },
+    seiMainnet: {
+      requestExpirationBlockAge: 1200, // about 5 minutes assuming 4 blocks per second
+      estimatedGasFeeBaseAmount: 8_000_000,
+      executionGasFeeBaseAmount: 8_000_000,
     },
   }[network.name];
 

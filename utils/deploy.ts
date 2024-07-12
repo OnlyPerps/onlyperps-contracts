@@ -90,18 +90,23 @@ export function createDeployFunction({
       // because the actual deploy did not succeed
       throw new Error(`Deploy failed with error ${e}`);
     }
-    console.log("deployArgs", deployArgs);
-    console.log("deployedContract.address", deployedContract.address);
-    console.log("libraries", libraries);
-    // try {
-    //   console.log("verifying...");
-    //   await run("verify:verify", {
-    //     address: deployedContract.address,
-    //     constructorArguments: deployArgs,
-    //     noCompile: true,
-    //   });
-    // } catch (e) {
-    //   console.log("verification failed, passs", e);
+
+    // if (network.name != "hardhat") {
+    //   console.log("deployArgs", deployArgs);
+    //   console.log("deployedContract.address", deployedContract.address);
+    //   console.log("libraries", libraries);
+
+    //   try {
+    //     console.log("verifying...");
+    //     await run("verify:verify", {
+    //       address: deployedContract.address,
+    //       constructorArguments: deployArgs,
+    //       noCompile: true,
+    //     });
+    //   } catch (e) {
+    //     console.log("verification failed, passs", e);
+    //   }
+
     // }
 
     if (afterDeploy) {

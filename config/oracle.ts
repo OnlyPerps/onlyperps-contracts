@@ -291,6 +291,31 @@ export default async function (hre: HardhatRuntimeEnvironment): Promise<OracleCo
         },
       },
     },
+    seiTestnet: {
+      realtimeFeedVerifier: "0x0000000000000000000000000000000000000000",
+      signers: [
+        "0x56F848016d241739954118b0f816A5CF08eD735e",
+        "0x985285CB412699f886312c7AadFF3fF5D4f43901",
+        "0x9e690768461ac62e4047c8a2922286495bf3D098",
+        "0xCf02f3df1D1a60789e6D1bd7f71e0D0BA65e0C4f",
+        "0xA4443291dc98f0483B67629a3fBa22681eb59a03",
+      ],
+      maxOraclePriceAge: 60 * 60 * 24,
+      maxRefPriceDeviationFactor: decimalToFloat(5, 1), // 50%
+      minOracleBlockConfirmations: 255,
+      minOracleSigners: 1,
+      // price feeds https://docs.chain.link/data-feeds/price-feeds/addresses?network=avalanche#Avalanche%20Testnet
+      tokens: {},
+    },
+    seiMainnet: {
+      signers: [],
+      maxOraclePriceAge: 60 * 60 * 24,
+      maxRefPriceDeviationFactor: decimalToFloat(5, 1), // 50%
+      minOracleBlockConfirmations: 255,
+      minOracleSigners: 1,
+      // price feeds https://docs.chain.link/data-feeds/price-feeds/addresses?network=avalanche#Avalanche%20Testnet
+      tokens: {},
+    },
 
     avalancheFuji: {
       realtimeFeedVerifier: "0x5f64394a2Ab3AcE9eCC071568Fc552489a8de7AF",

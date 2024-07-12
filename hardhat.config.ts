@@ -28,6 +28,8 @@ const getRpcUrl = (network) => {
     arbitrumGoerli: "https://goerli-rollup.arbitrum.io/rpc",
     avalancheFuji: "https://api.avax-test.network/ext/bc/C/rpc",
     snowtrace: "https://api.avax.network/ext/bc/C/rpc",
+    seiTestnet: "https://evm-rpc-testnet.sei-apis.com",
+    seiMainnet: "https://evm-rpc.sei-apis.com/",
   };
 
   let rpc = defaultRpcs[network];
@@ -96,6 +98,18 @@ const config: HardhatUserConfig = {
     localhost: {
       saveDeployments: true,
     },
+    seiTestnet: {
+      url: getRpcUrl("seiTestnet"),
+      chainId: 1328,
+      accounts: getEnvAccounts(),
+      blockGasLimit: 20_000_000,
+    },
+    seiMainnet: {
+      url: getRpcUrl("seiMainnet"),
+      chainId: 1329,
+      accounts: getEnvAccounts(),
+      blockGasLimit: 20_000_000,
+    },
     arbitrum: {
       url: getRpcUrl("arbitrum"),
       chainId: 42161,
@@ -161,8 +175,19 @@ const config: HardhatUserConfig = {
       arbitrumGoerli: process.env.ARBISCAN_API_KEY,
       avalancheFujiTestnet: process.env.SNOWTRACE_API_KEY,
       snowtrace: "snowtrace", // apiKey is not required, just set a placeholder
+      seiTestnet: process.env.SEITRACE_API_KEY,
+      seiMainnet: process.env.SEITRACE_API_KEY,
     },
     customChains: [
+      {
+        network: "seiTestnet",
+        chainId: 1328,
+        urls: {
+          apiURL: "https://seitrace.com/atlantic-2/api",
+          browserURL: "https://atlantic-2.seitrace.com",
+        },
+      },
+
       {
         network: "snowtrace",
         chainId: 43114,
