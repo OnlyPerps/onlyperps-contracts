@@ -175,8 +175,8 @@ const config: HardhatUserConfig = {
       arbitrumGoerli: process.env.ARBISCAN_API_KEY,
       avalancheFujiTestnet: process.env.SNOWTRACE_API_KEY,
       snowtrace: "snowtrace", // apiKey is not required, just set a placeholder
-      seiTestnet: process.env.SEITRACE_API_KEY,
-      seiMainnet: process.env.SEITRACE_API_KEY,
+      seiTestnet: "sei",
+      seiMainnet: "sei",
     },
     customChains: [
       {
@@ -184,7 +184,7 @@ const config: HardhatUserConfig = {
         chainId: 1328,
         urls: {
           apiURL: "https://seitrace.com/atlantic-2/api",
-          browserURL: "https://atlantic-2.seitrace.com",
+          browserURL: "https://seitrace.com/?chain=atlantic-2",
         },
       },
 

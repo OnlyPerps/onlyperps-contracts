@@ -19,6 +19,11 @@
 ### Protocol Addresses
 | Name                      | Address                                     |
 |---------------------------|---------------------------------------------|
+|Datastore | 0xcE1EeC3A19561DDc306c25D452017f43579Df581 |
+| EventEmitter | 0x86f44D0BD0fE3DC52F68d3F3656e0E5D2b02f689 |
+| OrderVault | 0x07E8cE62A53b6a86491163568f3aF3d05003D087 |
+| Reader or SyntheticsReader | 0x4705F24feD992b2E009F5e690a90493212B92dE3 |
+| Router or SyntheticsRouter | 0x9C45E1860Fe4b076376eFC05D29F5B213388DD3f |
 | GasUtils | 0x2e63A3AE69aec67a151D189926253279657C156E |
 | BaseOrderUtils | 0x41625b996FDa2cC0f037BCAaA6d496FEEAAB623f |
 | MarketStoreUtils | 0x322Bcb294582f86b0cd89De9d32fE28703eF054E |
