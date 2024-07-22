@@ -11,22 +11,25 @@ import { parseUnits } from "ethers/lib/utils";
 
 const { ethers } = hre;
 
-async function getContracts(tokenSymbol: string) {
-  const [marketFactory, roleStore, dataStore, depositVault, router, exchangeRouter, token, usdc] = await Promise.all([
+const USDT_ADDR = "0x2426453b0A69b137dcf9569238fF915cF93854B7";
+const WBTC_ADDR = "0x7b22007AAC2c9cb931CC33A446A0e17AFd51A051";
+
+async function getContracts(tokenAddr: string) {
+  const [marketFactory, roleStore, dataStore, depositVault, router, exchangeRouter, token, usdt] = await Promise.all([
     ethers.getContract("MarketFactory"),
     ethers.getContract("RoleStore"),
     ethers.getContract("DataStore"),
     ethers.getContract("DepositVault"),
     ethers.getContract("Router"),
     (await ethers.getContract("ExchangeRouter")) as ExchangeRouter,
-    (await ethers.getContract(tokenSymbol)) as MintableToken,
-    (await ethers.getContract("USDC")) as MintableToken,
+    (await ethers.getContractAt("MintableToken", tokenAddr)) as MintableToken,
+    (await ethers.getContractAt("MintableToken", USDT_ADDR)) as MintableToken,
   ]);
 
   const marketTokenAddress = await getMarketTokenAddress(
     token.address,
     token.address,
-    usdc.address,
+    usdt.address,
     DEFAULT_MARKET_TYPE,
     marketFactory.address,
     roleStore.address,
@@ -38,7 +41,7 @@ async function getContracts(tokenSymbol: string) {
     router,
     exchangeRouter,
     token,
-    usdc,
+    usdt,
     marketTokenAddress,
   };
 }
@@ -57,21 +60,21 @@ async function ensureERC20Balance(wallet: SignerWithAddress, token: MintableToke
 }
 
 async function main() {
-  const tokenSymbol = "LINK";
-  const { depositVault, router, exchangeRouter, token, usdc, marketTokenAddress } = await getContracts(tokenSymbol);
+  const { depositVault, router, exchangeRouter, token, usdt, marketTokenAddress } = await getContracts(WBTC_ADDR);
+  console.log(marketTokenAddress);
   const [wallet] = await ethers.getSigners();
   const executionFee = expandDecimals(1, 15); // 0.001 WNT
-  const longTokenAmount = expandDecimals(100000, 18); // 100000 xxx
-  const shortTokenAmount = expandDecimals(1484000, 6); // 1484000 USDC
-  const maxFeePerGas = parseUnits("0.001", "gwei");
-  const maxPriorityFeePerGas = 1;
+  const longTokenAmount = expandDecimals(100, 8); // 100000 xxx
+  const shortTokenAmount = expandDecimals(6813800, 6); //  USDT
+  const maxFeePerGas = parseUnits("2", "gwei");
+  const maxPriorityFeePerGas = parseUnits("1.001100001", "gwei");
 
   await ensureERC20Balance(wallet, token, longTokenAmount, router.address);
-  await ensureERC20Balance(wallet, usdc, shortTokenAmount, router.address);
+  await ensureERC20Balance(wallet, usdt, shortTokenAmount, router.address);
 
   const params: DepositUtils.CreateDepositParamsStruct = {
-    // receiver: "0x0000000000000000000000000000000000000001",
-    receiver: wallet.address,
+    receiver: "0x0000000000000000000000000000000000000001",
+    // receiver: wallet.address,
     callbackContract: ethers.constants.AddressZero,
     market: marketTokenAddress,
     minMarketTokens: 0,
@@ -80,7 +83,7 @@ async function main() {
     callbackGasLimit: 0,
     initialLongToken: token.address,
     longTokenSwapPath: [],
-    initialShortToken: usdc.address,
+    initialShortToken: usdt.address,
     shortTokenSwapPath: [],
     uiFeeReceiver: ethers.constants.AddressZero,
   };
@@ -88,7 +91,7 @@ async function main() {
   const multicallArgs = [
     exchangeRouter.interface.encodeFunctionData("sendWnt", [depositVault.address, executionFee]),
     exchangeRouter.interface.encodeFunctionData("sendTokens", [token.address, depositVault.address, longTokenAmount]),
-    exchangeRouter.interface.encodeFunctionData("sendTokens", [usdc.address, depositVault.address, shortTokenAmount]),
+    exchangeRouter.interface.encodeFunctionData("sendTokens", [usdt.address, depositVault.address, shortTokenAmount]),
     exchangeRouter.interface.encodeFunctionData("createDeposit", [params]),
   ];
 
@@ -96,6 +99,7 @@ async function main() {
     value: executionFee,
     maxFeePerGas: maxFeePerGas,
     maxPriorityFeePerGas: maxPriorityFeePerGas,
+    gasLimit: 1100000,
   });
   console.log("transaction sent", tx.hash);
 }
