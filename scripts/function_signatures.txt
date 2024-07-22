@@ -1,0 +1,1255 @@
+
+Contract: .migrations
+Function Name | Function Signature
+--------------------------------
+
+Contract: AdlHandler
+Function Name | Function Signature
+--------------------------------
+AdlNotRequired       | 0xd06ed8be
+CompactedArrayOutOfBounds | 0xbdec9c0d
+DisabledFeature      | 0xdd70e0c9
+DisabledMarket       | 0x09f8c937
+EmptyCompactedBlockNumber | 0x693ebfba
+EmptyMarket          | 0x05fbc1ae
+InvalidAdl           | 0x1d4fc3c0
+InvalidSwapMarket    | 0xcb9bd134
+PnlOvercorrected     | 0x9f0bc7de
+Unauthorized         | 0xa35b150b
+UnsupportedOracleBlockNumberType | 0xb6029281
+OracleError          | 0x9966b250
+dataStore            | 0x660d0d67
+eventEmitter         | 0x9ff78c30
+executeAdl           | 0xcbf247a9
+oracle               | 0x7dc0d1d0
+orderVault           | 0x93845e46
+referralStorage      | 0x006cc35e
+roleStore            | 0x4a4a7b04
+swapHandler          | 0x8a53aaac
+updateAdlState       | 0x36145feb
+
+Contract: AdlUtils
+Function Name | Function Signature
+--------------------------------
+AdlNotEnabled        | 0x3285dc57
+DisabledMarket       | 0x09f8c937
+EmptyMarket          | 0x05fbc1ae
+InvalidSizeDeltaForAdl | 0x720bb461
+OracleBlockNumbersAreSmallerThanRequired | 0x79181780
+validateAdl          | 0x85671ac5
+
+Contract: BaseOrderUtils
+Function Name | Function Signature
+--------------------------------
+
+Contract: CallbackUtils
+Function Name | Function Signature
+--------------------------------
+AfterDepositCancellationError | 0x976d8c92
+AfterDepositExecutionError | 0xcc46f8aa
+AfterOrderCancellationError | 0xc4e9fc55
+AfterOrderExecutionError | 0xde9631cd
+AfterOrderFrozenError | 0xaf7ea598
+AfterWithdrawalCancellationError | 0x1ae6cb22
+AfterWithdrawalExecutionError | 0x9b8b3b07
+
+Contract: Config
+Function Name | Function Signature
+--------------------------------
+InvalidBaseKey       | 0xeb19d3f5
+InvalidFeeFactor     | 0xce135bf4
+Unauthorized         | 0xa35b150b
+MAX_FEE_FACTOR       | 0xaf4937fc
+allowedBaseKeys      | 0x06850ad9
+dataStore            | 0x660d0d67
+eventEmitter         | 0x9ff78c30
+multicall            | 0xac9650d8
+roleStore            | 0x4a4a7b04
+setAddress           | 0x160d0ce6
+setBool              | 0xaa0179a5
+setBytes32           | 0x039f2ca6
+setInt               | 0xf70f0da2
+setPositionImpactDistributionRate | 0xffe478f3
+setUint              | 0xa43f85c5
+
+Contract: DataStore
+Function Name | Function Signature
+--------------------------------
+Unauthorized         | 0xa35b150b
+addAddress           | 0xb348e639
+addBytes32           | 0xc80f4c62
+addUint              | 0xadb353dc
+addressArrayValues   | 0x22f87464
+addressValues        | 0x22538dae
+applyBoundedDeltaToUint | 0x8ca498b0
+applyDeltaToInt      | 0xe4e36c4e
+applyDeltaToUint     | 0x32f85bbf
+applyDeltaToUint     | 0x3dbacd1a
+boolArrayValues      | 0x80aacdcd
+boolValues           | 0x44a242b1
+bytes32ArrayValues   | 0xbf498dd3
+bytes32Values        | 0xd52852af
+containsAddress      | 0xc769d1a1
+containsBytes32      | 0x91d4403c
+containsUint         | 0x310b8882
+decrementInt         | 0x6fae54f0
+decrementUint        | 0xe98aabc1
+getAddress           | 0x21f8a721
+getAddressArray      | 0x5948f733
+getAddressCount      | 0x35ea8059
+getAddressValuesAt   | 0xe7e4148e
+getBool              | 0x7ae1cfca
+getBoolArray         | 0x116bb929
+getBytes32           | 0xa6ed563e
+getBytes32Array      | 0xdd031997
+getBytes32Count      | 0xf3903b9f
+getBytes32ValuesAt   | 0xf069052a
+getInt               | 0xdc97d962
+getIntArray          | 0x2d2899b6
+getString            | 0x986e791a
+getStringArray       | 0x01677da2
+getUint              | 0xbd02d0f5
+getUintArray         | 0x86ac6bdf
+getUintCount         | 0x065f21a7
+getUintValuesAt      | 0x7026d42c
+incrementInt         | 0xcbb093dd
+incrementUint        | 0x340dbab3
+intArrayValues       | 0x6339734d
+intValues            | 0x743df325
+removeAddress        | 0x69721d41
+removeAddress        | 0x9faf6fb6
+removeAddressArray   | 0xc1dc9182
+removeBool           | 0x9fe7ac12
+removeBoolArray      | 0xf51fc0d9
+removeBytes32        | 0x9921c3cc
+removeBytes32        | 0xcf6a8722
+removeBytes32Array   | 0xbf7f035a
+removeInt            | 0xe62461ce
+removeIntArray       | 0x499ea50e
+removeString         | 0xcc50eadd
+removeStringArray    | 0xe208a70d
+removeUint           | 0x42c3bd96
+removeUint           | 0x93266f9a
+removeUintArray      | 0xbe43caa3
+roleStore            | 0x4a4a7b04
+setAddress           | 0xca446dd9
+setAddressArray      | 0xec672cf6
+setBool              | 0xabfdcced
+setBoolArray         | 0x35d4d407
+setBytes32           | 0x4e91db08
+setBytes32Array      | 0x26004846
+setInt               | 0x3e49bed0
+setIntArray          | 0xa9fcf76b
+setString            | 0x6e899550
+setStringArray       | 0x88021a72
+setUint              | 0xe2a4853a
+setUintArray         | 0x5eb07dbd
+stringArrayValues    | 0xb8320a08
+stringValues         | 0xf15caeac
+uintArrayValues      | 0xc4f00fde
+uintValues           | 0xd38eebc7
+
+Contract: DecreaseOrderUtils
+Function Name | Function Signature
+--------------------------------
+DisabledMarket       | 0x09f8c937
+EmptyMarket          | 0x05fbc1ae
+EmptyPosition        | 0x4dfbbff3
+InsufficientOutputAmount | 0xd28d3eb5
+InvalidPositionMarket | 0x182e30e3
+OracleBlockNumberNotWithinRange | 0x7c1f500a
+OracleBlockNumbersAreSmallerThanRequired | 0x79181780
+UnsupportedOrderType | 0xc1c00831
+
+Contract: DecreasePositionCollateralUtils
+Function Name | Function Signature
+--------------------------------
+EmptyHoldingAddress  | 0xe9b78bd4
+InsufficientFundsToPayForCosts | 0x19d50093
+UnableToGetCachedTokenPrice | 0xbe4729a2
+UnexpectedBorrowingFactor | 0x99b2d582
+UnexpectedTokenForVirtualInventory | 0x785ee469
+
+Contract: DecreasePositionSwapUtils
+Function Name | Function Signature
+--------------------------------
+InvalidOutputToken   | 0x253c8c02
+
+Contract: DecreasePositionUtils
+Function Name | Function Signature
+--------------------------------
+InvalidDecreaseOrderSize | 0x9fbe2cbc
+MaxOpenInterestExceeded | 0x2bf127cf
+OpenInterestCannotBeUpdatedForSwapOnlyMarket | 0x730293fd
+PositionShouldNotBeLiquidated | 0xee919dd9
+UnableToGetCachedTokenPrice | 0xbe4729a2
+UnableToWithdrawCollateral | 0x3a61a4a9
+
+Contract: DepositEventUtils
+Function Name | Function Signature
+--------------------------------
+
+Contract: DepositHandler
+Function Name | Function Signature
+--------------------------------
+CompactedArrayOutOfBounds | 0xbdec9c0d
+DisabledFeature      | 0xdd70e0c9
+EmptyCompactedBlockNumber | 0x693ebfba
+EndOfOracleSimulation | 0x4e48dcda
+InsufficientExecutionGas | 0xbb416f93
+InsufficientExecutionGasForErrorHandling | 0x79293964
+InsufficientHandleExecutionErrorGas | 0x3083b9e5
+InvalidPrimaryPricesForSimulation | 0x663de023
+RequestNotYetCancellable | 0xe8266438
+Unauthorized         | 0xa35b150b
+UnsupportedOracleBlockNumberType | 0xb6029281
+OracleError          | 0x9966b250
+_executeDeposit      | 0x9dffd516
+cancelDeposit        | 0x31404484
+createDeposit        | 0x8e13ac1a
+dataStore            | 0x660d0d67
+depositVault         | 0xd7cd3949
+eventEmitter         | 0x9ff78c30
+executeDeposit       | 0x5b472f4c
+oracle               | 0x7dc0d1d0
+roleStore            | 0x4a4a7b04
+simulateExecuteDeposit | 0xc023b6f5
+
+Contract: DepositStoreUtils
+Function Name | Function Signature
+--------------------------------
+DepositNotFound      | 0x43e30ca8
+ACCOUNT              | 0xe90524f2
+CALLBACK_CONTRACT    | 0x8f7f2048
+CALLBACK_GAS_LIMIT   | 0x33d608f1
+EXECUTION_FEE        | 0x4675e8eb
+INITIAL_LONG_TOKEN   | 0x52341d26
+INITIAL_LONG_TOKEN_AMOUNT | 0xd165556f
+INITIAL_SHORT_TOKEN  | 0xc76eb23b
+INITIAL_SHORT_TOKEN_AMOUNT | 0x9a41866b
+LONG_TOKEN_SWAP_PATH | 0xb451e534
+MARKET               | 0xf46f16c2
+MIN_MARKET_TOKENS    | 0x4e39e541
+RECEIVER             | 0xad7430cc
+SHORT_TOKEN_SWAP_PATH | 0xdb854fb7
+SHOULD_UNWRAP_NATIVE_TOKEN | 0x04a36e20
+UI_FEE_RECEIVER      | 0x566a6e66
+UPDATED_AT_BLOCK     | 0xf145e54a
+get                  | 0xfdfc26f3
+
+Contract: DepositUtils
+Function Name | Function Signature
+--------------------------------
+DisabledMarket       | 0x09f8c937
+EmptyAccount         | 0xdd7016a2
+EmptyDeposit         | 0x95b66fe9
+EmptyDepositAmounts  | 0x01af8c24
+EmptyMarket          | 0x05fbc1ae
+EmptyReceiver        | 0xd551823d
+InsufficientExecutionFee | 0x5dac504d
+InsufficientWntAmountForExecutionFee | 0x3a78cd7e
+InvalidSwapMarket    | 0xcb9bd134
+MaxCallbackGasLimitExceeded | 0x10aeb692
+MaxSwapPathLengthExceeded | 0x9da36043
+
+Contract: DepositVault
+Function Name | Function Signature
+--------------------------------
+EmptyHoldingAddress  | 0xe9b78bd4
+EmptyReceiver        | 0xd551823d
+EmptyTokenTranferGasLimit | 0x9fc297fa
+InvalidNativeTokenSender | 0xe71a51be
+SelfTransferNotSupported | 0xe70f9152
+TokenTransferError   | 0x979dc780
+Unauthorized         | 0xa35b150b
+dataStore            | 0x660d0d67
+recordTransferIn     | 0x352f9aed
+roleStore            | 0x4a4a7b04
+syncTokenBalance     | 0xeb40133f
+tokenBalances        | 0x523fba7f
+transferOut          | 0x078d3b79
+transferOut          | 0x2fb12605
+transferOutNativeToken | 0xd443ca94
+
+Contract: EventEmitter
+Function Name | Function Signature
+--------------------------------
+Unauthorized         | 0xa35b150b
+EventLog             | 0x8158c92a
+EventLog1            | 0x77ee6d2f
+EventLog2            | 0x6fdf1da0
+emitDataLog1         | 0xf9d5c0ea
+emitDataLog2         | 0xdda0db32
+emitDataLog3         | 0xb3ac1c38
+emitDataLog4         | 0xee288ce8
+emitEventLog         | 0x1ec24019
+emitEventLog1        | 0xfebd4231
+emitEventLog2        | 0xc1708ab3
+roleStore            | 0x4a4a7b04
+
+Contract: ExchangeRouter
+Function Name | Function Signature
+--------------------------------
+CollateralAlreadyClaimed | 0xec6d89c8
+DisabledFeature      | 0xdd70e0c9
+DisabledMarket       | 0x09f8c937
+EmptyAddressInMarketTokenBalanceValidation | 0xe474a425
+EmptyDeposit         | 0x95b66fe9
+EmptyHoldingAddress  | 0xe9b78bd4
+EmptyMarket          | 0x05fbc1ae
+EmptyOrder           | 0x16307797
+EmptyReceiver        | 0xd551823d
+EmptyTokenTranferGasLimit | 0x9fc297fa
+InvalidClaimAffiliateRewardsInput | 0x5b3043dd
+InvalidClaimCollateralInput | 0x42c0d1f2
+InvalidClaimFundingFeesInput | 0x7363cfa5
+InvalidClaimUiFeesInput | 0x74cee48d
+InvalidMarketTokenBalance | 0x33a1ea6b
+InvalidMarketTokenBalanceForClaimableFunding | 0x9dd026db
+InvalidMarketTokenBalanceForCollateralAmount | 0x808c464f
+InvalidUiFeeFactor   | 0x81468139
+TokenTransferError   | 0x979dc780
+Unauthorized         | 0xa35b150b
+cancelDeposit        | 0x31404484
+cancelOrder          | 0x7489ec23
+cancelWithdrawal     | 0x7213c5a0
+claimAffiliateRewards | 0x49287a22
+claimCollateral      | 0xe9249b57
+claimFundingFees     | 0xc41b1ab3
+claimUiFees          | 0x01a9cbb2
+createDeposit        | 0xbb69470e
+createOrder          | 0xd8b6cc2f
+createWithdrawal     | 0xa19048e4
+dataStore            | 0x660d0d67
+depositHandler       | 0x9c8b2cfb
+eventEmitter         | 0x9ff78c30
+multicall            | 0xac9650d8
+orderHandler         | 0xb5848305
+roleStore            | 0x4a4a7b04
+router               | 0xf887ea40
+sendNativeToken      | 0x53ead2d3
+sendTokens           | 0xe6d66ac8
+sendWnt              | 0x7d39aaf1
+setSavedCallbackContract | 0x073fb09e
+setUiFeeFactor       | 0x5a03cd94
+simulateExecuteDeposit | 0xc023b6f5
+simulateExecuteOrder | 0x6f748dfb
+simulateExecuteWithdrawal | 0x2997caea
+updateOrder          | 0xaab286f8
+withdrawalHandler    | 0x2c2f3c07
+
+Contract: ExecuteDepositUtils
+Function Name | Function Signature
+--------------------------------
+DisabledMarket       | 0x09f8c937
+EmptyDeposit         | 0x95b66fe9
+EmptyDepositAmountsAfterSwap | 0xd1c3d5bd
+EmptyMarket          | 0x05fbc1ae
+InvalidMinMarketTokensForFirstDeposit | 0x3f9c06ab
+InvalidPoolValueForDeposit | 0xadaa688d
+InvalidReceiverForFirstDeposit | 0x77e8e698
+InvalidSwapMarket    | 0xcb9bd134
+InvalidSwapOutputToken | 0x6ba3dd8b
+MaxPoolAmountExceeded | 0x6429ff3f
+MaxPoolAmountForDepositExceeded | 0x6e28a3a1
+MinMarketTokens      | 0x6ce23460
+OracleBlockNumberNotWithinRange | 0x7c1f500a
+PRBMathUD60x18__Exp2InputTooBig | 0x4a4f26f1
+PRBMathUD60x18__LogInputTooSmall | 0xd88504dc
+PRBMath__MulDivFixedPointOverflow | 0xd31b3402
+PnlFactorExceededForLongs | 0xb92fb250
+PnlFactorExceededForShorts | 0xb0010694
+UnexpectedTokenForVirtualInventory | 0x785ee469
+UsdDeltaExceedsPoolValue | 0x2e949409
+RECEIVER_FOR_FIRST_DEPOSIT | 0xf1b65c51
+
+Contract: ExecuteWithdrawalUtils
+Function Name | Function Signature
+--------------------------------
+DisabledMarket       | 0x09f8c937
+EmptyMarket          | 0x05fbc1ae
+EmptyMarketTokenSupply | 0x2ee3d69c
+EmptyWithdrawal      | 0x6d4bb5e9
+EmptyWithdrawalAmount | 0x01d6f7b1
+InsufficientMarketTokens | 0x82c8828a
+InsufficientReserve  | 0x315276c9
+InvalidPoolValueForWithdrawal | 0x90a6af3b
+InvalidSwapMarket    | 0xcb9bd134
+OracleBlockNumberNotWithinRange | 0x7c1f500a
+PnlFactorExceededForLongs | 0xb92fb250
+PnlFactorExceededForShorts | 0xb0010694
+UnexpectedTokenForVirtualInventory | 0x785ee469
+
+Contract: FeeHandler
+Function Name | Function Signature
+--------------------------------
+EmptyReceiver        | 0xd551823d
+InvalidClaimFeesInput | 0x84fa13d5
+Unauthorized         | 0xa35b150b
+claimFees            | 0x3de460f0
+dataStore            | 0x660d0d67
+eventEmitter         | 0x9ff78c30
+roleStore            | 0x4a4a7b04
+
+Contract: FeeUtils
+Function Name | Function Signature
+--------------------------------
+EmptyReceiver        | 0xd551823d
+
+Contract: GasUtils
+Function Name | Function Signature
+--------------------------------
+KeeperExecutionFee   | 0x57682c67
+UserRefundFee        | 0xc17d2b18
+
+Contract: GovTimelockController
+Function Name | Function Signature
+--------------------------------
+CallExecuted         | 0xc2617efa
+CallSalt             | 0x20fda5fd
+CallScheduled        | 0x4cf4410c
+Cancelled            | 0xbaa1eb22
+MinDelayChange       | 0x11c24f4e
+RoleAdminChanged     | 0xbd79b86f
+RoleGranted          | 0x2f878811
+RoleRevoked          | 0xf6391f5c
+CANCELLER_ROLE       | 0xb08e51c0
+DEFAULT_ADMIN_ROLE   | 0xa217fddf
+EXECUTOR_ROLE        | 0x07bd0265
+PROPOSER_ROLE        | 0x8f61f4f5
+TIMELOCK_ADMIN_ROLE  | 0x0d3cf6fc
+cancel               | 0xc4d252f5
+execute              | 0x134008d3
+executeBatch         | 0xe38335e5
+getMinDelay          | 0xf27a0c92
+getRoleAdmin         | 0x248a9ca3
+getTimestamp         | 0xd45c4435
+grantRole            | 0x2f2ff15d
+hasRole              | 0x91d14854
+hashOperation        | 0x8065657f
+hashOperationBatch   | 0xb1c5f427
+isOperation          | 0x31d50750
+isOperationDone      | 0x2ab0f529
+isOperationPending   | 0x584b153e
+isOperationReady     | 0x13bc9f20
+name                 | 0x06fdde03
+onERC1155BatchReceived | 0xbc197c81
+onERC1155Received    | 0xf23a6e61
+onERC721Received     | 0x150b7a02
+renounceRole         | 0x36568abe
+revokeRole           | 0xd547741f
+schedule             | 0x01d5062a
+scheduleBatch        | 0x8f2a0bb0
+supportsInterface    | 0x01ffc9a7
+updateDelay          | 0x64d62353
+
+Contract: GovToken
+Function Name | Function Signature
+--------------------------------
+InvalidShortString   | 0xb3512b0c
+StringTooLong        | 0x305a27a9
+Unauthorized         | 0xa35b150b
+Approval             | 0x8c5be1e5
+DelegateChanged      | 0x3134e8a2
+DelegateVotesChanged | 0xdec2bacd
+EIP712DomainChanged  | 0x0a6387c9
+Transfer             | 0xddf252ad
+CLOCK_MODE           | 0x4bf5d7e9
+DOMAIN_SEPARATOR     | 0x3644e515
+allowance            | 0xdd62ed3e
+approve              | 0x095ea7b3
+balanceOf            | 0x70a08231
+burn                 | 0x9dc29fac
+checkpoints          | 0xf1127ed8
+clock                | 0x91ddadf4
+decimals             | 0x313ce567
+decreaseAllowance    | 0xa457c2d7
+delegate             | 0x5c19a95c
+delegateBySig        | 0xc3cda520
+delegates            | 0x587cde1e
+eip712Domain         | 0x84b0196e
+getPastTotalSupply   | 0x8e539e8c
+getPastVotes         | 0x3a46b1a8
+getVotes             | 0x9ab24eb0
+increaseAllowance    | 0x39509351
+mint                 | 0x40c10f19
+name                 | 0x06fdde03
+nonces               | 0x7ecebe00
+numCheckpoints       | 0x6fcfff45
+permit               | 0xd505accf
+roleStore            | 0x4a4a7b04
+symbol               | 0x95d89b41
+totalSupply          | 0x18160ddd
+transfer             | 0xa9059cbb
+transferFrom         | 0x23b872dd
+
+Contract: IncreaseOrderUtils
+Function Name | Function Signature
+--------------------------------
+DisabledMarket       | 0x09f8c937
+EmptyMarket          | 0x05fbc1ae
+InvalidCollateralTokenForMarket | 0x839c693e
+InvalidPositionMarket | 0x182e30e3
+OracleBlockNumberNotWithinRange | 0x7c1f500a
+OracleBlockNumbersAreSmallerThanRequired | 0x79181780
+UnexpectedPositionState | 0x814991c3
+UnsupportedOrderType | 0xc1c00831
+
+Contract: IncreasePositionUtils
+Function Name | Function Signature
+--------------------------------
+InsufficientCollateralAmount | 0x74cc815b
+InsufficientCollateralUsd | 0x2159b161
+InsufficientReserve  | 0x315276c9
+InsufficientReserveForOpenInterest | 0xb98c6179
+MaxOpenInterestExceeded | 0x2bf127cf
+OpenInterestCannotBeUpdatedForSwapOnlyMarket | 0x730293fd
+UnableToGetCachedTokenPrice | 0xbe4729a2
+UnexpectedBorrowingFactor | 0x99b2d582
+UnexpectedTokenForVirtualInventory | 0x785ee469
+
+Contract: LiquidationHandler
+Function Name | Function Signature
+--------------------------------
+CompactedArrayOutOfBounds | 0xbdec9c0d
+DisabledFeature      | 0xdd70e0c9
+DisabledMarket       | 0x09f8c937
+EmptyCompactedBlockNumber | 0x693ebfba
+EmptyMarket          | 0x05fbc1ae
+InvalidSwapMarket    | 0xcb9bd134
+Unauthorized         | 0xa35b150b
+UnsupportedOracleBlockNumberType | 0xb6029281
+OracleError          | 0x9966b250
+dataStore            | 0x660d0d67
+eventEmitter         | 0x9ff78c30
+executeLiquidation   | 0x4ea2fb8a
+oracle               | 0x7dc0d1d0
+orderVault           | 0x93845e46
+referralStorage      | 0x006cc35e
+roleStore            | 0x4a4a7b04
+swapHandler          | 0x8a53aaac
+
+Contract: LiquidationUtils
+Function Name | Function Signature
+--------------------------------
+
+Contract: MarketEventUtils
+Function Name | Function Signature
+--------------------------------
+
+Contract: MarketFactory
+Function Name | Function Signature
+--------------------------------
+MarketAlreadyExists  | 0x25e34fa1
+Unauthorized         | 0xa35b150b
+createMarket         | 0xa50ff3a6
+dataStore            | 0x660d0d67
+eventEmitter         | 0x9ff78c30
+roleStore            | 0x4a4a7b04
+
+Contract: MarketStoreUtils
+Function Name | Function Signature
+--------------------------------
+MarketNotFound       | 0x6918f9bf
+INDEX_TOKEN          | 0xc11201f7
+LONG_TOKEN           | 0x00a28b36
+MARKET_KEY           | 0x492dec5a
+MARKET_SALT          | 0xdb73bb15
+MARKET_TOKEN         | 0x91bf0ff2
+SHORT_TOKEN          | 0x5231e24f
+get                  | 0xa8d8fff5
+getBySalt            | 0x537803c2
+
+Contract: MarketUtils
+Function Name | Function Signature
+--------------------------------
+DisabledMarket       | 0x09f8c937
+EmptyAddressInMarketTokenBalanceValidation | 0xe474a425
+EmptyMarket          | 0x05fbc1ae
+InvalidMarketTokenBalance | 0x33a1ea6b
+InvalidMarketTokenBalanceForClaimableFunding | 0x9dd026db
+InvalidMarketTokenBalanceForCollateralAmount | 0x808c464f
+PRBMathUD60x18__Exp2InputTooBig | 0x4a4f26f1
+PRBMathUD60x18__LogInputTooSmall | 0xd88504dc
+PRBMath__MulDivFixedPointOverflow | 0xd31b3402
+UnableToGetBorrowingFactorEmptyPoolUsd | 0x6afad778
+UnableToGetFundingFactorEmptyOpenInterest | 0x11423d95
+getMarketTokenPrice  | 0xd329024c
+getPoolValueInfo     | 0x679a55b6
+validateMarketTokenBalance | 0x6bbff104
+validateMarketTokenBalance | 0x5930015e
+validateMarketTokenBalance | 0x0d130769
+
+Contract: MockPriceFeed
+Function Name | Function Signature
+--------------------------------
+answer               | 0x85bb7d69
+latestAnswer         | 0x50d25bcd
+latestRoundData      | 0xfeaf968c
+setAnswer            | 0x99213cd8
+
+Contract: Multicall3
+Function Name | Function Signature
+--------------------------------
+aggregate            | 0xd0707b67
+aggregate3           | 0xc2e047ff
+aggregate3Value      | 0x841a9d42
+blockAndAggregate    | 0x966c523e
+getBasefee           | 0x3e64a696
+getBlockHash         | 0xee82ac5e
+getBlockNumber       | 0x42cbb15c
+getChainId           | 0x3408e470
+getCurrentBlockCoinbase | 0xa8b0574e
+getCurrentBlockGasLimit | 0x86d516e8
+getCurrentBlockTimestamp | 0x0f28c97d
+getEthBalance        | 0x4d2301cc
+getLastBlockHash     | 0x27e86d6e
+tryAggregate         | 0x3997d064
+tryBlockAndAggregate | 0x28e439f3
+
+Contract: Oracle
+Function Name | Function Signature
+--------------------------------
+ArrayOutOfBoundsBytes | 0x70657e04
+ArrayOutOfBoundsUint256 | 0x9d18e63b
+BlockNumbersNotSorted | 0x11aeaf6b
+CompactedArrayOutOfBounds | 0xbdec9c0d
+DuplicatedIndex      | 0xd4064737
+EmptyCompactedBlockNumber | 0x693ebfba
+EmptyCompactedPrice  | 0x155064c4
+EmptyCompactedTimestamp | 0x9ffb34e9
+EmptyPriceFeed       | 0x44f234b1
+EmptyPriceFeedMultiplier | 0xcc111885
+EmptyPrimaryPrice    | 0xcd64a025
+EmptyRealtimeFeedId  | 0xb8ad473e
+EmptyRealtimeFeedMultiplier | 0xd47acf95
+EmptySigner          | 0x48c3705f
+HasRealtimeFeedId    | 0xe48f5a57
+InvalidBlockNumber   | 0xd5dc642d
+InvalidBlockRangeSet | 0x25e5dc07
+InvalidFeedPrice     | 0xbe6514b6
+InvalidMedianMinMaxPrice | 0xf4aa5e21
+InvalidMinMaxBlockNumber | 0x933ee623
+InvalidMinMaxForPrice | 0x1608d41a
+InvalidOraclePrice   | 0x59bfa365
+InvalidRealtimeBidAsk | 0x68e18ffe
+InvalidRealtimeBlockHash | 0xbafc9132
+InvalidRealtimeFeedId | 0x81cecccb
+InvalidRealtimeFeedLengths | 0x374a1a6a
+InvalidRealtimePrices | 0x7e9d0604
+InvalidSignature     | 0x42d750dc
+InvalidSignerMinMaxPrice | 0x61eff54a
+MaskIndexOutOfBounds | 0x143e2156
+MaxOracleSigners     | 0x345da1b3
+MaxPriceAgeExceeded  | 0x2b6e7c3f
+MaxPricesNotSorted   | 0xf5055b94
+MaxRefPriceDeviationExceeded | 0x3d1986f7
+MaxSignerIndex       | 0xd112babc
+MinOracleSigners     | 0xa9e62212
+MinPricesNotSorted   | 0x4b992b34
+NonEmptyTokensWithPrices | 0xef2df9b5
+PriceAlreadySet      | 0xded099de
+PriceFeedNotUpdated  | 0x90ce1673
+RealtimeMaxPriceAgeExceeded | 0x48893179
+Unauthorized         | 0xa35b150b
+MAX_SIGNERS          | 0x59ecd657
+MAX_SIGNER_INDEX     | 0xb74da61d
+SIGNER_INDEX_LENGTH  | 0x3b9f9bd2
+clearAllPrices       | 0x00ccf155
+getPriceFeedMultiplier | 0xe7b91834
+getPrimaryPrice      | 0x5dcf7194
+getRealtimeFeedMultiplier | 0x02f5fe2a
+getStablePrice       | 0xd1358ea9
+getTokensWithPrices  | 0x51b5107a
+getTokensWithPricesCount | 0x7901828d
+oracleStore          | 0x392bf7f6
+primaryPrices        | 0xa2bbd604
+realtimeFeedVerifier | 0xd09efc41
+roleStore            | 0x4a4a7b04
+setPrices            | 0xac02e2d2
+setPrimaryPrice      | 0xf05bfaa2
+validatePrices       | 0xeb6bd696
+validateRealtimeFeeds | 0xf81a03c3
+
+Contract: OracleStore
+Function Name | Function Signature
+--------------------------------
+Unauthorized         | 0xa35b150b
+addSigner            | 0xeb12d61e
+eventEmitter         | 0x9ff78c30
+getSigner            | 0x3ffefe4e
+getSignerCount       | 0xb715be81
+getSigners           | 0xdaf6faa6
+removeSigner         | 0x0e316ab7
+roleStore            | 0x4a4a7b04
+
+Contract: OrderEventUtils
+Function Name | Function Signature
+--------------------------------
+
+Contract: OrderHandler
+Function Name | Function Signature
+--------------------------------
+CompactedArrayOutOfBounds | 0xbdec9c0d
+DisabledFeature      | 0xdd70e0c9
+DisabledMarket       | 0x09f8c937
+EmptyCompactedBlockNumber | 0x693ebfba
+EmptyMarket          | 0x05fbc1ae
+EmptyOrder           | 0x16307797
+EndOfOracleSimulation | 0x4e48dcda
+InsufficientExecutionFee | 0x5dac504d
+InsufficientExecutionGas | 0xbb416f93
+InsufficientExecutionGasForErrorHandling | 0x79293964
+InsufficientHandleExecutionErrorGas | 0x3083b9e5
+InvalidKeeperForFrozenOrder | 0xe5feddc0
+InvalidPrimaryPricesForSimulation | 0x663de023
+InvalidSwapMarket    | 0xcb9bd134
+OrderNotUpdatable    | 0x9aba92cb
+RequestNotYetCancellable | 0xe8266438
+Unauthorized         | 0xa35b150b
+UnsupportedOracleBlockNumberType | 0xb6029281
+UnsupportedOrderType | 0xc1c00831
+OracleError          | 0x9966b250
+_executeOrder        | 0xb08b94f8
+cancelOrder          | 0x7489ec23
+createOrder          | 0xdcfce366
+dataStore            | 0x660d0d67
+eventEmitter         | 0x9ff78c30
+executeOrder         | 0x97017239
+oracle               | 0x7dc0d1d0
+orderVault           | 0x93845e46
+referralStorage      | 0x006cc35e
+roleStore            | 0x4a4a7b04
+simulateExecuteOrder | 0x6f748dfb
+swapHandler          | 0x8a53aaac
+updateOrder          | 0x4477f2c6
+
+Contract: OrderStoreUtils
+Function Name | Function Signature
+--------------------------------
+OrderNotFound        | 0x59485ed9
+ACCEPTABLE_PRICE     | 0x3d59fea5
+ACCOUNT              | 0xe90524f2
+CALLBACK_CONTRACT    | 0x8f7f2048
+CALLBACK_GAS_LIMIT   | 0x33d608f1
+DECREASE_POSITION_SWAP_TYPE | 0xd1550af3
+EXECUTION_FEE        | 0x4675e8eb
+INITIAL_COLLATERAL_DELTA_AMOUNT | 0x6ecd534a
+INITIAL_COLLATERAL_TOKEN | 0x8d5dc584
+IS_FROZEN            | 0x91cb3e3c
+IS_LONG              | 0x3332c5be
+MARKET               | 0xf46f16c2
+MIN_OUTPUT_AMOUNT    | 0x797cb5a2
+ORDER_TYPE           | 0xea00f333
+RECEIVER             | 0xad7430cc
+SHOULD_UNWRAP_NATIVE_TOKEN | 0x04a36e20
+SIZE_DELTA_USD       | 0xd6a3502a
+SWAP_PATH            | 0x52bc6257
+TRIGGER_PRICE        | 0xa31a6411
+UI_FEE_RECEIVER      | 0x566a6e66
+UPDATED_AT_BLOCK     | 0xf145e54a
+get                  | 0xfdfc26f3
+
+Contract: OrderUtils
+Function Name | Function Signature
+--------------------------------
+DisabledMarket       | 0x09f8c937
+EmptyAccount         | 0xdd7016a2
+EmptyMarket          | 0x05fbc1ae
+EmptyOrder           | 0x16307797
+EmptyReceiver        | 0xd551823d
+InsufficientExecutionFee | 0x5dac504d
+InsufficientWntAmountForExecutionFee | 0x3a78cd7e
+InvalidOrderPrices   | 0x0481a15a
+InvalidPositionMarket | 0x182e30e3
+InvalidSwapMarket    | 0xcb9bd134
+MaxCallbackGasLimitExceeded | 0x10aeb692
+MaxSwapPathLengthExceeded | 0x9da36043
+OrderAlreadyFrozen   | 0x730d44b1
+OrderTypeCannotBeCreated | 0x8a4bd513
+UnsupportedOrderType | 0xc1c00831
+
+Contract: OrderVault
+Function Name | Function Signature
+--------------------------------
+EmptyHoldingAddress  | 0xe9b78bd4
+EmptyReceiver        | 0xd551823d
+EmptyTokenTranferGasLimit | 0x9fc297fa
+InvalidNativeTokenSender | 0xe71a51be
+SelfTransferNotSupported | 0xe70f9152
+TokenTransferError   | 0x979dc780
+Unauthorized         | 0xa35b150b
+dataStore            | 0x660d0d67
+recordTransferIn     | 0x352f9aed
+roleStore            | 0x4a4a7b04
+syncTokenBalance     | 0xeb40133f
+tokenBalances        | 0x523fba7f
+transferOut          | 0x078d3b79
+transferOut          | 0x2fb12605
+transferOutNativeToken | 0xd443ca94
+
+Contract: PositionEventUtils
+Function Name | Function Signature
+--------------------------------
+
+Contract: PositionPricingUtils
+Function Name | Function Signature
+--------------------------------
+
+Contract: PositionStoreUtils
+Function Name | Function Signature
+--------------------------------
+PositionNotFound     | 0x426cfff0
+ACCOUNT              | 0xe90524f2
+BORROWING_FACTOR     | 0x55179790
+COLLATERAL_AMOUNT    | 0xd276322c
+COLLATERAL_TOKEN     | 0xf5f1f1a7
+DECREASED_AT_BLOCK   | 0x72374d97
+FUNDING_FEE_AMOUNT_PER_SIZE | 0xf01cce52
+INCREASED_AT_BLOCK   | 0xa5ec7275
+IS_LONG              | 0x3332c5be
+LONG_TOKEN_CLAIMABLE_FUNDING_AMOUNT_PER_SIZE | 0xb837888f
+MARKET               | 0xf46f16c2
+SHORT_TOKEN_CLAIMABLE_FUNDING_AMOUNT_PER_SIZE | 0x5c0ca0a0
+SIZE_IN_TOKENS       | 0x21cd56bf
+SIZE_IN_USD          | 0xed955e20
+get                  | 0xfdfc26f3
+
+Contract: PositionUtils
+Function Name | Function Signature
+--------------------------------
+DisabledMarket       | 0x09f8c937
+EmptyMarket          | 0x05fbc1ae
+EmptySizeDeltaInTokens | 0x3df42531
+InvalidCollateralTokenForMarket | 0x839c693e
+InvalidPositionSizeValues | 0xbff65b3f
+LiquidatablePosition | 0xbc121108
+MinPositionSize      | 0x85efb31a
+NegativeExecutionPrice | 0xcc32db99
+OrderNotFulfillableAtAcceptablePrice | 0xe09ad0e9
+PRBMathUD60x18__Exp2InputTooBig | 0x4a4f26f1
+PRBMathUD60x18__LogInputTooSmall | 0xd88504dc
+PRBMath__MulDivFixedPointOverflow | 0xd31b3402
+PriceImpactLargerThanOrderSize | 0xf0641c92
+UnableToGetCachedTokenPrice | 0xbe4729a2
+UnexpectedBorrowingFactor | 0x99b2d582
+UsdDeltaExceedsLongOpenInterest | 0xeadaf93a
+UsdDeltaExceedsShortOpenInterest | 0x8af0d140
+getExecutionPriceForDecrease | 0xf1f6fee7
+getExecutionPriceForIncrease | 0xbe86b9e1
+getPositionPnlUsd    | 0x22975828
+isPositionLiquidatable | 0x081bdc77
+validatePosition     | 0x51edbf11
+willPositionCollateralBeSufficient | 0x3db5b641
+
+Contract: ProtocolGovernor
+Function Name | Function Signature
+--------------------------------
+Empty                | 0x3db2a12a
+InvalidShortString   | 0xb3512b0c
+StringTooLong        | 0x305a27a9
+EIP712DomainChanged  | 0x0a6387c9
+ProposalCanceled     | 0x789cf55b
+ProposalCreated      | 0x7d84a626
+ProposalExecuted     | 0x712ae138
+ProposalQueued       | 0x9a2e42fd
+ProposalThresholdSet | 0xccb45da8
+QuorumNumeratorUpdated | 0x0553476b
+TimelockChange       | 0x08f74ea4
+VoteCast             | 0xb8e13888
+VoteCastWithParams   | 0xe2babfba
+VotingDelaySet       | 0xc565b045
+VotingPeriodSet      | 0x7e3f7f07
+BALLOT_TYPEHASH      | 0xdeaaa7cc
+CLOCK_MODE           | 0x4bf5d7e9
+COUNTING_MODE        | 0xdd4e2ba5
+EXTENDED_BALLOT_TYPEHASH | 0x2fe3e261
+cancel               | 0x40e58ee5
+cancel               | 0x452115d6
+castVote             | 0x56781388
+castVoteBySig        | 0x3bccf4fd
+castVoteWithReason   | 0x7b3c71d3
+castVoteWithReasonAndParams | 0x5f398a14
+castVoteWithReasonAndParamsBySig | 0x03420181
+clock                | 0x91ddadf4
+eip712Domain         | 0x84b0196e
+execute              | 0x2656227d
+execute              | 0xfe0d94c1
+getActions           | 0x328dd982
+getReceipt           | 0xe23a9a52
+getVotes             | 0xeb9019d4
+getVotesWithParams   | 0x9a802a6d
+hasVoted             | 0x43859632
+hashProposal         | 0xc59057e4
+name                 | 0x06fdde03
+onERC1155BatchReceived | 0xbc197c81
+onERC1155Received    | 0xf23a6e61
+onERC721Received     | 0x150b7a02
+proposalDeadline     | 0xc01f9e37
+proposalEta          | 0xab58fb8e
+proposalProposer     | 0x143489d0
+proposalSnapshot     | 0x2d63f693
+proposalThreshold    | 0xb58131b0
+proposals            | 0x013cf08b
+propose              | 0x7d5e81e2
+propose              | 0xda95691a
+queue                | 0x160cbed7
+queue                | 0xddf0b009
+quorum               | 0xf8ce560a
+quorumDenominator    | 0x97c3d334
+quorumNumerator      | 0x60c4247f
+quorumNumerator      | 0xa7713a70
+quorumVotes          | 0x24bc1a64
+relay                | 0xc28bc2fa
+setProposalThreshold | 0xece40cc1
+setVotingDelay       | 0x70b0f660
+setVotingPeriod      | 0xea0217cf
+state                | 0x3e4f49e6
+supportsInterface    | 0x01ffc9a7
+timelock             | 0xd33219b4
+token                | 0xfc0c546a
+updateQuorumNumerator | 0x06f3f9e6
+updateTimelock       | 0xa890c910
+version              | 0x54fd4d50
+votingDelay          | 0x3932abb1
+votingPeriod         | 0x02a251a3
+
+Contract: Reader
+Function Name | Function Signature
+--------------------------------
+DisabledMarket       | 0x09f8c937
+EmptyMarket          | 0x05fbc1ae
+getAccountOrders     | 0x42a6f8d3
+getAccountPositionInfoList | 0x25fa722a
+getAccountPositions  | 0x77cfb162
+getAdlState          | 0x03e9e247
+getDeposit           | 0x1485d297
+getDepositAmountOut  | 0x44546066
+getExecutionPrice    | 0x8bf3ac43
+getMarket            | 0x714af34b
+getMarketBySalt      | 0xa4f0d550
+getMarketInfo        | 0x4f16d308
+getMarketInfoList    | 0xf59e0591
+getMarketTokenPrice  | 0xf892d7cf
+getMarkets           | 0xce3264bf
+getNetPnl            | 0x9df462e5
+getOpenInterestWithPnl | 0xa4f9980e
+getOrder             | 0x49651b6a
+getPnl               | 0xce968ccc
+getPnlToPoolFactor   | 0xa4315aa1
+getPosition          | 0x0fa8f516
+getPositionInfo      | 0xabf80513
+getPositionPnlUsd    | 0x8d0c5bbd
+getSwapAmountOut     | 0xb67e50b1
+getSwapPriceImpact   | 0x82bf97d1
+getWithdrawal        | 0xceeea3bf
+getWithdrawalAmountOut | 0x79bc4f36
+
+Contract: ReaderDepositUtils
+Function Name | Function Signature
+--------------------------------
+InvalidPoolValueForDeposit | 0xadaa688d
+PRBMathUD60x18__Exp2InputTooBig | 0x4a4f26f1
+PRBMathUD60x18__LogInputTooSmall | 0xd88504dc
+PRBMath__MulDivFixedPointOverflow | 0xd31b3402
+UsdDeltaExceedsPoolValue | 0x2e949409
+getDepositAmountOut  | 0x836cbfbf
+getDepositAmountOutForSingleToken | 0xfba751cd
+
+Contract: ReaderPricingUtils
+Function Name | Function Signature
+--------------------------------
+DisabledMarket       | 0x09f8c937
+EmptyMarket          | 0x05fbc1ae
+InvalidSwapMarket    | 0xcb9bd134
+InvalidTokenIn       | 0x53f81711
+PRBMathUD60x18__Exp2InputTooBig | 0x4a4f26f1
+PRBMathUD60x18__LogInputTooSmall | 0xd88504dc
+PRBMath__MulDivFixedPointOverflow | 0xd31b3402
+UnableToGetCachedTokenPrice | 0xbe4729a2
+UnableToGetOppositeToken | 0x7a0ca681
+UsdDeltaExceedsPoolValue | 0x2e949409
+getExecutionPrice    | 0x52a0106e
+getSwapAmountOut     | 0xe36a5e9a
+getSwapPriceImpact   | 0x3bf80d6e
+
+Contract: ReaderUtils
+Function Name | Function Signature
+--------------------------------
+PRBMathUD60x18__Exp2InputTooBig | 0x4a4f26f1
+PRBMathUD60x18__LogInputTooSmall | 0xd88504dc
+PRBMath__MulDivFixedPointOverflow | 0xd31b3402
+UnableToGetBorrowingFactorEmptyPoolUsd | 0x6afad778
+UnableToGetCachedTokenPrice | 0xbe4729a2
+UnableToGetFundingFactorEmptyOpenInterest | 0x11423d95
+UnexpectedBorrowingFactor | 0x99b2d582
+getBaseFundingValues | 0x2ccfd250
+getMarketInfo        | 0x0a3688a6
+getNextFundingAmountPerSize | 0x1ef61c0f
+getPositionInfo      | 0x36bcf8fd
+
+Contract: ReaderWithdrawalUtils
+Function Name | Function Signature
+--------------------------------
+EmptyMarketTokenSupply | 0x2ee3d69c
+InvalidPoolValueForWithdrawal | 0x90a6af3b
+getWithdrawalAmountOut | 0x9483ba6b
+
+Contract: ReferralEventUtils
+Function Name | Function Signature
+--------------------------------
+
+Contract: ReferralStorage
+Function Name | Function Signature
+--------------------------------
+Unauthorized         | 0xa35b150b
+GovSetCodeOwner      | 0x6431f88c
+RegisterCode         | 0x04f82286
+SetCodeOwner         | 0x56408567
+SetGov               | 0x53351836
+SetHandler           | 0xd373464a
+SetReferrerDiscountShare | 0xbd224f39
+SetReferrerTier      | 0x7696855c
+SetTier              | 0x4ebd23a4
+SetTraderReferralCode | 0x43825f14
+BASIS_POINTS         | 0xe1f1c4a7
+acceptOwnership      | 0x79ba5097
+codeOwners           | 0xc8b3c460
+getTraderReferralInfo | 0x534ef883
+gov                  | 0x12d43a51
+govSetCodeOwner      | 0xdfcfa250
+isHandler            | 0x46ea87af
+pendingGov           | 0x25240810
+referrerDiscountShares | 0x71a6a790
+referrerTiers        | 0x1582a018
+registerCode         | 0x36def2c8
+setCodeOwner         | 0xed843134
+setHandler           | 0x9cb7de4b
+setReferrerDiscountShare | 0x9c8e2de9
+setReferrerTier      | 0x3fb8b323
+setTier              | 0x836a0187
+setTraderReferralCode | 0x56b4b2ad
+setTraderReferralCodeByUser | 0xe1e01bf3
+tiers                | 0x039af9eb
+traderReferralCodes  | 0x85725b58
+transferOwnership    | 0xf2fde38b
+
+Contract: ReferralUtils
+Function Name | Function Signature
+--------------------------------
+
+Contract: RoleStore
+Function Name | Function Signature
+--------------------------------
+ThereMustBeAtLeastOneRoleAdmin | 0xb783c88a
+ThereMustBeAtLeastOneTimelockMultiSig | 0x282b5b70
+Unauthorized         | 0xa35b150b
+getRoleCount         | 0x83d33319
+getRoleMemberCount   | 0xca15c873
+getRoleMembers       | 0x2a861f57
+getRoles             | 0x821c1898
+grantRole            | 0xab2742dc
+hasRole              | 0xac4ab3fb
+revokeRole           | 0x208dd1ff
+
+Contract: Router
+Function Name | Function Signature
+--------------------------------
+Unauthorized         | 0xa35b150b
+pluginTransfer       | 0x1b827878
+roleStore            | 0x4a4a7b04
+
+Contract: SubaccountRouter
+Function Name | Function Signature
+--------------------------------
+DisabledFeature      | 0xdd70e0c9
+EmptyHoldingAddress  | 0xe9b78bd4
+EmptyOrder           | 0x16307797
+EmptyReceiver        | 0xd551823d
+EmptyTokenTranferGasLimit | 0x9fc297fa
+InvalidNativeTokenSender | 0xe71a51be
+InvalidReceiverForSubaccountOrder | 0x4baab816
+MaxSubaccountActionCountExceeded | 0x519ba753
+SubaccountNotAuthorized | 0x9be0a43c
+TokenTransferError   | 0x979dc780
+addSubaccount        | 0x3914f217
+cancelOrder          | 0x7489ec23
+createOrder          | 0xdcfce366
+dataStore            | 0x660d0d67
+eventEmitter         | 0x9ff78c30
+multicall            | 0xac9650d8
+orderHandler         | 0xb5848305
+orderVault           | 0x93845e46
+removeSubaccount     | 0x712182eb
+roleStore            | 0x4a4a7b04
+router               | 0xf887ea40
+sendNativeToken      | 0x53ead2d3
+sendTokens           | 0xe6d66ac8
+sendWnt              | 0x7d39aaf1
+setMaxAllowedSubaccountActionCount | 0x3e46b365
+setSubaccountAutoTopUpAmount | 0x79a358a2
+updateOrder          | 0xaab286f8
+
+Contract: SwapHandler
+Function Name | Function Signature
+--------------------------------
+Unauthorized         | 0xa35b150b
+roleStore            | 0x4a4a7b04
+swap                 | 0x93eca257
+
+Contract: SwapOrderUtils
+Function Name | Function Signature
+--------------------------------
+OracleBlockNumberNotWithinRange | 0x7c1f500a
+OracleBlockNumbersAreSmallerThanRequired | 0x79181780
+UnexpectedMarket     | 0xcc3459ff
+UnsupportedOrderType | 0xc1c00831
+
+Contract: SwapPricingUtils
+Function Name | Function Signature
+--------------------------------
+
+Contract: SwapUtils
+Function Name | Function Signature
+--------------------------------
+DisabledMarket       | 0x09f8c937
+DuplicatedMarketInSwapPath | 0x91c78b78
+EmptyMarket          | 0x05fbc1ae
+InsufficientOutputAmount | 0xd28d3eb5
+InsufficientReserve  | 0x315276c9
+InsufficientSwapOutputAmount | 0xa7aebadc
+InvalidSwapMarket    | 0xcb9bd134
+InvalidTokenIn       | 0x53f81711
+MaxPoolAmountExceeded | 0x6429ff3f
+PRBMathUD60x18__Exp2InputTooBig | 0x4a4f26f1
+PRBMathUD60x18__LogInputTooSmall | 0xd88504dc
+PRBMath__MulDivFixedPointOverflow | 0xd31b3402
+PnlFactorExceededForLongs | 0xb92fb250
+PnlFactorExceededForShorts | 0xb0010694
+SwapPriceImpactExceedsAmountIn | 0x75885d69
+UnableToGetOppositeToken | 0x7a0ca681
+UnexpectedTokenForVirtualInventory | 0x785ee469
+UsdDeltaExceedsPoolValue | 0x2e949409
+SwapReverted         | 0x8eed4d55
+
+Contract: Timelock
+Function Name | Function Signature
+--------------------------------
+ActionAlreadySignalled | 0xb244a107
+ActionNotSignalled   | 0x94fdaea2
+InvalidFeeReceiver   | 0xcb9339d5
+InvalidOracleSigner  | 0xc1b14c91
+InvalidTimelockDelay | 0xe6b0ddb6
+MaxTimelockDelayExceeded | 0xfaf66f0c
+SignalTimeNotYetPassed | 0x20b23584
+Unauthorized         | 0xa35b150b
+MAX_TIMELOCK_DELAY   | 0x2a083ca3
+addOracleSignerAfterSignal | 0x2d6b4cc6
+cancelAction         | 0x781cc3d3
+dataStore            | 0x660d0d67
+eventEmitter         | 0x9ff78c30
+grantRoleAfterSignal | 0x0ffc3cf6
+increaseTimelockDelay | 0xf03278d4
+multicall            | 0xac9650d8
+oracleStore          | 0x392bf7f6
+pendingActions       | 0xe30569e5
+removeOracleSignerAfterSignal | 0xbcb151e4
+revokeRole           | 0x208dd1ff
+revokeRoleAfterSignal | 0xd59ba7e4
+roleStore            | 0x4a4a7b04
+setFeeReceiverAfterSignal | 0xc4fe486c
+setInStrictPriceFeedMode | 0x4a675846
+setPriceFeedAfterSignal | 0x75fa1913
+setRealtimeFeedAfterSignal | 0x9d89c42b
+signalAddOracleSigner | 0x0f43905d
+signalGrantRole      | 0xa9765cae
+signalRemoveOracleSigner | 0x69bc0f3b
+signalRevokeRole     | 0x728ca574
+signalSetFeeReceiver | 0xb6b9b02f
+signalSetPriceFeed   | 0x0fe29bbc
+signalSetRealtimeFeed | 0xe82d14f1
+timelockDelay        | 0xeef09bad
+
+Contract: WithdrawalEventUtils
+Function Name | Function Signature
+--------------------------------
+
+Contract: WithdrawalHandler
+Function Name | Function Signature
+--------------------------------
+CompactedArrayOutOfBounds | 0xbdec9c0d
+DisabledFeature      | 0xdd70e0c9
+EmptyCompactedBlockNumber | 0x693ebfba
+EndOfOracleSimulation | 0x4e48dcda
+InsufficientExecutionGas | 0xbb416f93
+InsufficientExecutionGasForErrorHandling | 0x79293964
+InsufficientHandleExecutionErrorGas | 0x3083b9e5
+InvalidPrimaryPricesForSimulation | 0x663de023
+RequestNotYetCancellable | 0xe8266438
+Unauthorized         | 0xa35b150b
+UnsupportedOracleBlockNumberType | 0xb6029281
+OracleError          | 0x9966b250
+_executeWithdrawal   | 0xe07db4e0
+cancelWithdrawal     | 0x7213c5a0
+createWithdrawal     | 0xab1cb03e
+dataStore            | 0x660d0d67
+eventEmitter         | 0x9ff78c30
+executeWithdrawal    | 0xc0e2d50d
+oracle               | 0x7dc0d1d0
+roleStore            | 0x4a4a7b04
+simulateExecuteWithdrawal | 0x2997caea
+withdrawalVault      | 0x69d42148
+
+Contract: WithdrawalStoreUtils
+Function Name | Function Signature
+--------------------------------
+WithdrawalNotFound   | 0x60737bc0
+ACCOUNT              | 0xe90524f2
+CALLBACK_CONTRACT    | 0x8f7f2048
+CALLBACK_GAS_LIMIT   | 0x33d608f1
+EXECUTION_FEE        | 0x4675e8eb
+LONG_TOKEN_SWAP_PATH | 0xb451e534
+MARKET               | 0xf46f16c2
+MARKET_TOKEN_AMOUNT  | 0x284d63ed
+MIN_LONG_TOKEN_AMOUNT | 0xf5b0e5b1
+MIN_SHORT_TOKEN_AMOUNT | 0x856d8f89
+RECEIVER             | 0xad7430cc
+SHORT_TOKEN_SWAP_PATH | 0xdb854fb7
+SHOULD_UNWRAP_NATIVE_TOKEN | 0x04a36e20
+UI_FEE_RECEIVER      | 0x566a6e66
+UPDATED_AT_BLOCK     | 0xf145e54a
+get                  | 0xfdfc26f3
+
+Contract: WithdrawalUtils
+Function Name | Function Signature
+--------------------------------
+DisabledMarket       | 0x09f8c937
+EmptyAccount         | 0xdd7016a2
+EmptyMarket          | 0x05fbc1ae
+EmptyReceiver        | 0xd551823d
+EmptyWithdrawal      | 0x6d4bb5e9
+EmptyWithdrawalAmount | 0x01d6f7b1
+InsufficientExecutionFee | 0x5dac504d
+InsufficientWntAmount | 0x041b3483
+InvalidSwapMarket    | 0xcb9bd134
+MaxCallbackGasLimitExceeded | 0x10aeb692
+MaxSwapPathLengthExceeded | 0x9da36043
+
+Contract: WithdrawalVault
+Function Name | Function Signature
+--------------------------------
+EmptyHoldingAddress  | 0xe9b78bd4
+EmptyReceiver        | 0xd551823d
+EmptyTokenTranferGasLimit | 0x9fc297fa
+InvalidNativeTokenSender | 0xe71a51be
+SelfTransferNotSupported | 0xe70f9152
+TokenTransferError   | 0x979dc780
+Unauthorized         | 0xa35b150b
+dataStore            | 0x660d0d67
+recordTransferIn     | 0x352f9aed
+roleStore            | 0x4a4a7b04
+syncTokenBalance     | 0xeb40133f
+tokenBalances        | 0x523fba7f
+transferOut          | 0x078d3b79
+transferOut          | 0x2fb12605
+transferOutNativeToken | 0xd443ca94

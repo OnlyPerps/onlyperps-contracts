@@ -63,7 +63,7 @@ async function main() {
   const { depositVault, router, exchangeRouter, token, usdt, marketTokenAddress } = await getContracts(WBTC_ADDR);
   console.log(marketTokenAddress);
   const [wallet] = await ethers.getSigners();
-  const executionFee = expandDecimals(1, 15); // 0.001 WNT
+  const executionFee = expandDecimals(1, 18); // 0.001 WNT
   const longTokenAmount = expandDecimals(100, 8); // 100000 xxx
   const shortTokenAmount = expandDecimals(6813800, 6); //  USDT
   const maxFeePerGas = parseUnits("2", "gwei");
