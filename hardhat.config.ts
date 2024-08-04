@@ -14,6 +14,8 @@ import "hardhat-deploy";
 
 import "@typechain/hardhat";
 import "@nomiclabs/hardhat-ethers";
+import * as tdly from "@tenderly/hardhat-tenderly";
+tdly.setup({ automaticVerifications: false });
 
 // extends hre with gmx domain data
 import "./config";
@@ -209,6 +211,16 @@ const config: HardhatUserConfig = {
   },
   sourcify: {
     enabled: false,
+  },
+  tenderly: {
+    username: process.env.TENDERLY_USERNAME,
+    project: "onlyperps",
+
+    // Contract visible only in Tenderly.
+    // Omitting or setting to `false` makes it visible to the whole world.
+    // Alternatively, admin-rpc verification visibility using
+    // an environment variable `TENDERLY_PRIVATE_VERIFICATION`.
+    privateVerification: true, // visible only to tenderly, `public` is visible to everyone
   },
 };
 
