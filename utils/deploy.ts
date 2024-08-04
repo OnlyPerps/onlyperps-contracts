@@ -38,7 +38,7 @@ export function createDeployFunction({
   }) => Promise<void>;
   id?: string;
 }): DeployFunction {
-  const func = async ({ getNamedAccounts, deployments, gmx, network, run }: HardhatRuntimeEnvironment) => {
+  const func = async ({ getNamedAccounts, deployments, gmx, network, run, tenderly }: HardhatRuntimeEnvironment) => {
     const { deploy, get } = deployments;
     const { deployer } = await getNamedAccounts();
 
@@ -98,10 +98,10 @@ export function createDeployFunction({
 
       try {
         console.log("verifying...");
-        await run("verify:verify", {
+        await tenderly.verify({
+          name: contractName,
           address: deployedContract.address,
-          constructorArguments: deployArgs,
-          noCompile: true,
+          libraries: libraries,
         });
       } catch (e) {
         console.log("verification failed, passs", e);
