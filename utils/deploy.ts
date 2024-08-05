@@ -39,6 +39,7 @@ export function createDeployFunction({
   id?: string;
 }): DeployFunction {
   const func = async ({ getNamedAccounts, deployments, gmx, network, run, tenderly }: HardhatRuntimeEnvironment) => {
+    console.log(contractName, "???");
     const { deploy, get } = deployments;
     const { deployer } = await getNamedAccounts();
 
@@ -90,7 +91,7 @@ export function createDeployFunction({
       // because the actual deploy did not succeed
       throw new Error(`Deploy failed with error ${e}`);
     }
-
+    console.log("running deploy function", contractName);
     if (network.name != "hardhat") {
       console.log("deployArgs", deployArgs);
       console.log("deployedContract.address", deployedContract.address);
@@ -140,6 +141,7 @@ export function createDeployFunction({
   }
   func.tags = [contractName];
   func.dependencies = dependencies;
+  console.log(contractName, "deploy func done");
 
   return func;
 }

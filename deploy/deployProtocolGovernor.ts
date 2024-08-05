@@ -3,7 +3,6 @@ import { expandDecimals } from "../utils/math";
 
 const func = createDeployFunction({
   contractName: "ProtocolGovernor",
-  id: "ProtocolGovernor_1",
   dependencyNames: ["GovToken", "GovTimelockController"],
   getDeployArgs: async ({ dependencyContracts }) => {
     return [

@@ -8,7 +8,6 @@ const func = createDeployFunction({
   getDeployArgs: async ({ dependencyContracts }) => {
     return constructorContracts.map((dependencyName) => dependencyContracts[dependencyName].address);
   },
-  id: "EventEmitter_1",
 });
 
 export default func;
