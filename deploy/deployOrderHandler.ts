@@ -28,7 +28,6 @@ const func = createDeployFunction({
 
     await grantRoleIfNotGranted(deployedContract.address, "CONTROLLER");
   },
-  id: "OrderHandler_3",
 });
 
 export default func;

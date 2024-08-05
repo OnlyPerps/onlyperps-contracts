@@ -3,7 +3,6 @@ import { createDeployFunction } from "../utils/deploy";
 
 const func = createDeployFunction({
   contractName: "ReferralStorage",
-  id: "ReferralStorage_2",
   afterDeploy: async ({ deployer, deployments }) => {
     const { read, execute, log } = deployments;
 
