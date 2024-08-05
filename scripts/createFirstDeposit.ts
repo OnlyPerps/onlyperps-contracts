@@ -11,8 +11,8 @@ import { parseUnits } from "ethers/lib/utils";
 
 const { ethers } = hre;
 
-const USDT_ADDR = "0x2426453b0A69b137dcf9569238fF915cF93854B7";
-const WBTC_ADDR = "0x7b22007AAC2c9cb931CC33A446A0e17AFd51A051";
+const USDT_ADDR = "0x88ae85C78791ac69e4071E7910B23c87e1F9a587";
+const WBTC_ADDR = "0x91F077956442b544b81c7cd24232D4F616A6fB6D";
 
 async function getContracts(tokenAddr: string) {
   const [marketFactory, roleStore, dataStore, depositVault, router, exchangeRouter, token, usdt] = await Promise.all([
@@ -63,18 +63,18 @@ async function main() {
   const { depositVault, router, exchangeRouter, token, usdt, marketTokenAddress } = await getContracts(WBTC_ADDR);
   console.log(marketTokenAddress);
   const [wallet] = await ethers.getSigners();
-  const executionFee = expandDecimals(1, 18); // 0.001 WNT
-  const longTokenAmount = expandDecimals(100, 8); // 100000 xxx
-  const shortTokenAmount = expandDecimals(6813800, 6); //  USDT
-  const maxFeePerGas = parseUnits("2", "gwei");
+  const executionFee = expandDecimals(1, 17); // 0.001 WNT
+  const longTokenAmount = expandDecimals(100, 8); // 100 wbtc
+  const shortTokenAmount = expandDecimals(5145700, 6); //  USDT
+  const maxFeePerGas = parseUnits("1", "gwei");
   const maxPriorityFeePerGas = parseUnits("1.001100001", "gwei");
 
   await ensureERC20Balance(wallet, token, longTokenAmount, router.address);
   await ensureERC20Balance(wallet, usdt, shortTokenAmount, router.address);
 
   const params: DepositUtils.CreateDepositParamsStruct = {
-    receiver: "0x0000000000000000000000000000000000000001",
-    // receiver: wallet.address,
+    // receiver: "0x0000000000000000000000000000000000000001",
+    receiver: wallet.address,
     callbackContract: ethers.constants.AddressZero,
     market: marketTokenAddress,
     minMarketTokens: 0,
@@ -99,7 +99,6 @@ async function main() {
     value: executionFee,
     maxFeePerGas: maxFeePerGas,
     maxPriorityFeePerGas: maxPriorityFeePerGas,
-    gasLimit: 1100000,
   });
   console.log("transaction sent", tx.hash);
 }
