@@ -11,11 +11,11 @@ import "hardhat-contract-sizer";
 import "solidity-coverage";
 import "hardhat-gas-reporter";
 import "hardhat-deploy";
-
 import "@typechain/hardhat";
-import "@nomiclabs/hardhat-ethers";
+
 import * as tdly from "@tenderly/hardhat-tenderly";
 tdly.setup({ automaticVerifications: false });
+import "@nomiclabs/hardhat-ethers";
 
 // extends hre with gmx domain data
 import "./config";
