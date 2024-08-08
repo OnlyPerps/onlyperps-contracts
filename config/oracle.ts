@@ -302,7 +302,7 @@ export default async function (hre: HardhatRuntimeEnvironment): Promise<OracleCo
       ],
       maxOraclePriceAge: 60 * 60 * 24,
       maxRefPriceDeviationFactor: decimalToFloat(5, 1), // 50%
-      minOracleBlockConfirmations: 255,
+      minOracleBlockConfirmations: 0,
       minOracleSigners: 1,
       // price feeds https://docs.chain.link/data-feeds/price-feeds/addresses?network=avalanche#Avalanche%20Testnet
       tokens: {},
@@ -311,7 +311,7 @@ export default async function (hre: HardhatRuntimeEnvironment): Promise<OracleCo
       signers: [],
       maxOraclePriceAge: 60 * 60 * 24,
       maxRefPriceDeviationFactor: decimalToFloat(5, 1), // 50%
-      minOracleBlockConfirmations: 255,
+      minOracleBlockConfirmations: 0,
       minOracleSigners: 1,
       // price feeds https://docs.chain.link/data-feeds/price-feeds/addresses?network=avalanche#Avalanche%20Testnet
       tokens: {},
