@@ -48,6 +48,33 @@ export type TokensConfig = { [tokenSymbol: string]: TokenConfig };
 const config: {
   [network: string]: TokensConfig;
 } = {
+  seiMainnet: {
+    WETH: {
+      transferGasLimit: 200 * 1000,
+      deploy: false,
+      address: "0x160345fC359604fC6e70E3c5fAcbdE5F7A9342d8",
+      decimals: 18,
+    },
+    WSEI: {
+      transferGasLimit: 200 * 1000,
+      deploy: false,
+      address: "0xE30feDd158A2e3b13e9badaeABaFc5516e95e8C7",
+      decimals: 18,
+      wrappedNative: true,
+    },
+    USDT: {
+      transferGasLimit: 200 * 1000,
+      deploy: false,
+      address: "0xB75D0B03c06A926e488e2659DF1A861F860bD3d1",
+      decimals: 6,
+    },
+    USDC: {
+      transferGasLimit: 200 * 1000,
+      deploy: false,
+      address: "0x3894085Ef7Ff0f0aeDf52E2A2704928d1Ec074F1",
+      decimals: 6,
+    },
+  },
   seiTestnet: {
     WBTC: {
       transferGasLimit: 200 * 1000,

@@ -308,7 +308,14 @@ export default async function (hre: HardhatRuntimeEnvironment): Promise<OracleCo
       tokens: {},
     },
     seiMainnet: {
-      signers: [],
+      realtimeFeedVerifier: "0x0000000000000000000000000000000000000000",
+      signers: [
+        "0x99eb2f95203f3B8C289985B7daf76D7Ef5978220",
+        "0xB80602994e8cE1832Bf77607D0ce424f42b04478",
+        "0x48E02248cAa8D894C9b84366AF8b768146C5657b",
+        "0x395aAF9F1fFEeB4f580a659C8Da665032038D2b9",
+        "0x518A52a9113E09F2FF214C3083980e7970440274",
+      ],
       maxOraclePriceAge: 60 * 60 * 24,
       maxRefPriceDeviationFactor: decimalToFloat(5, 1), // 50%
       minOracleBlockConfirmations: 0,

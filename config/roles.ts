@@ -39,6 +39,15 @@ export default async function (hre: HardhatRuntimeEnvironment): Promise<RolesCon
     "0xA4443291dc98f0483B67629a3fBa22681eb59a03": true,
   };
 
+  const seiMainnetAdmins = {
+    "0x99eb2f95203f3B8C289985B7daf76D7Ef5978220": true,
+    "0xB80602994e8cE1832Bf77607D0ce424f42b04478": true,
+    "0x48E02248cAa8D894C9b84366AF8b768146C5657b": true,
+    "0x395aAF9F1fFEeB4f580a659C8Da665032038D2b9": true,
+    "0x518A52a9113E09F2FF214C3083980e7970440274": true,
+    "0x7080d856BE05A04104Ba5787F1b9583233E0D964": true,
+  };
+
   const testnetConfig = {
     CONTROLLER: testnetAdmins,
     ORDER_KEEPER: testnetAdmins,
@@ -46,6 +55,14 @@ export default async function (hre: HardhatRuntimeEnvironment): Promise<RolesCon
     LIQUIDATION_KEEPER: testnetAdmins,
     MARKET_KEEPER: testnetAdmins,
     FROZEN_ORDER_KEEPER: testnetAdmins,
+  };
+  const seiMainnetConfig = {
+    CONTROLLER: seiMainnetAdmins,
+    ORDER_KEEPER: seiMainnetAdmins,
+    ADL_KEEPER: seiMainnetAdmins,
+    LIQUIDATION_KEEPER: seiMainnetAdmins,
+    MARKET_KEEPER: seiMainnetAdmins,
+    FROZEN_ORDER_KEEPER: seiMainnetAdmins,
   };
   const config: {
     [network: string]: RolesConfig;
@@ -161,6 +178,7 @@ export default async function (hre: HardhatRuntimeEnvironment): Promise<RolesCon
     arbitrumGoerli: testnetConfig,
     avalancheFuji: testnetConfig,
     seiTestnet: testnetConfig,
+    seiMainnet: seiMainnetConfig,
   };
   return config[hre.network.name];
 }

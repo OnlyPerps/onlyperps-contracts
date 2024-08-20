@@ -182,6 +182,14 @@ const config: HardhatUserConfig = {
     },
     customChains: [
       {
+        network: "seiMainnet",
+        chainId: 1329,
+        urls: {
+          apiURL: "https://seitrace.com/pacific-1/api",
+          browserURL: "https://seitrace.com/?chain=pacific-1",
+        },
+      },
+      {
         network: "seiTestnet",
         chainId: 1328,
         urls: {
@@ -220,7 +228,7 @@ const config: HardhatUserConfig = {
     // Omitting or setting to `false` makes it visible to the whole world.
     // Alternatively, admin-rpc verification visibility using
     // an environment variable `TENDERLY_PRIVATE_VERIFICATION`.
-    privateVerification: true, // visible only to tenderly, `public` is visible to everyone
+    privateVerification: false, // visible only to tenderly, `public` is visible to everyone
   },
 };
 
