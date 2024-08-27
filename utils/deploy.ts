@@ -104,6 +104,11 @@ export function createDeployFunction({
           address: deployedContract.address,
           libraries: libraries,
         });
+        // await run("verify:verify", {
+        //   address: deployedContract.address,
+        //   constructorArguments: deployArgs,
+        //   noCompile: true,
+        // });
       } catch (e) {
         console.log("verification failed, passs", e);
       }
