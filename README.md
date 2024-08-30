@@ -1,6 +1,6 @@
-# GMX Synthetics
+# OnlyPerps Synthetics
 
-Contracts for GMX Synthetics.
+Contracts for OnlyPerps Synthetics.
 
 # General Overview
 
