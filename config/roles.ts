@@ -55,6 +55,7 @@ export default async function (hre: HardhatRuntimeEnvironment): Promise<RolesCon
     LIQUIDATION_KEEPER: testnetAdmins,
     MARKET_KEEPER: testnetAdmins,
     FROZEN_ORDER_KEEPER: testnetAdmins,
+    CONFIG_KEEPER: testnetAdmins,
   };
   const seiMainnetConfig = {
     CONTROLLER: seiMainnetAdmins,
