@@ -107,6 +107,12 @@ const config: {
       address: "0x10b37cA82FC8C728Bb20f4066692cf47650031E9",
       decimals: 6,
     },
+    WLD: {
+      transferGasLimit: 200 * 1000,
+      deploy: false,
+      address: "0x513C9cCbA16acED3cA0a5a9A41f752CEC71fe242",
+      decimals: 18,
+    },
   },
   arbitrum: {
     BTC: {
