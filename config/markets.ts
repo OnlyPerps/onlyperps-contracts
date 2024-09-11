@@ -313,12 +313,6 @@ const config: {
       maxLongTokenPoolAmountForDeposit: expandDecimals(24_500, 18),
       maxShortTokenPoolAmountForDeposit: expandDecimals(55_000_000, 6),
 
-      maxPnlFactorForAdlLongs: decimalToFloat(2, 2), // 2%
-      maxPnlFactorForAdlShorts: decimalToFloat(2, 2), // 2%
-
-      minPnlFactorAfterAdlLongs: decimalToFloat(1, 4), // 0.01%
-      minPnlFactorAfterAdlShorts: decimalToFloat(1, 4), // 0.01%
-
       negativePositionImpactFactor: decimalToFloat(15, 11), // 0.05% for ~1,600,000 USD of imbalance
       positivePositionImpactFactor: decimalToFloat(9, 11), // 0.05% for ~2,700,000 USD of imbalance
 
