@@ -113,6 +113,13 @@ const config: {
       address: "0x513C9cCbA16acED3cA0a5a9A41f752CEC71fe242",
       decimals: 18,
     },
+    TON: {
+      // 0x4CB0b06b71a16D4b1Dfc1FA31AEB5d0Cf61Ad39D
+      synthetic: true,
+      transferGasLimit: 200 * 1000,
+      deploy: false,
+      decimals: 18,
+    },
   },
   arbitrum: {
     BTC: {
