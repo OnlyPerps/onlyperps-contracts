@@ -438,8 +438,8 @@ const config: {
       maxLongTokenPoolAmount: expandDecimals(135_000_100, 18),
       maxShortTokenPoolAmount: expandDecimals(60_000_000, 6),
 
-      maxLongTokenPoolAmountForDeposit: expandDecimals(24_500, 18),
-      maxShortTokenPoolAmountForDeposit: expandDecimals(55_000_000, 6),
+      maxLongTokenPoolAmountForDeposit: expandDecimals(135_000_100, 18),
+      maxShortTokenPoolAmountForDeposit: expandDecimals(60_000_000, 6),
 
       negativePositionImpactFactor: decimalToFloat(15, 11), // 0.05% for ~1,600,000 USD of imbalance
       positivePositionImpactFactor: decimalToFloat(9, 11), // 0.05% for ~2,700,000 USD of imbalance
